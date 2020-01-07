@@ -13,7 +13,7 @@ const ThankyouIndex = () => {
                 <div className="text-holder" style={{paddingTop: '25px'}}>
                     <h3>
                         THANK YOU <br/>
-                        For you Kitcheninn Order!<br/><br/>
+                        For you Kitcheninns Order!<br/><br/>
 
                         It has been sent to the restaurant to be prepared just the way you like it.<br/><br/>
 

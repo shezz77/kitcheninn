@@ -12,7 +12,7 @@ const TopMenu = () => {
         if (hostname === "en.food2you.com"){
             window.location.href = 'http://food2you.com';
         } else {
-            window.location.href = 'http://kitcheninn.com';
+            window.location.href = 'http://kitcheninns.com';
         }
 
     };
@@ -33,7 +33,7 @@ const TopMenu = () => {
                     <ul className="nav navbar-nav navbar-right">
                         <li className="active"><a href="/">Home</a></li>
                         <li><a href="#service-page">Our booking experience</a></li>
-                        <li><a onClick={handleRedirect} href="#f2u">{layout.language}</a></li>
+                        {/*<li><a onClick={handleRedirect} href="#f2u">{layout.language}</a></li>*/}
                     </ul>
                 </div>
             </div>

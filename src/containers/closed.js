@@ -12,7 +12,7 @@ const Closed = () => {
                 Thank You visiting,  <br/>
                 {context.websiteClosedText}<br/><br/>
 
-                Kitcheninn<br/><br/>
+                Kitcheninns<br/><br/>
             </h3>
         </Layout>
     );

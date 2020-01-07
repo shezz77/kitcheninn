@@ -1,4 +1,4 @@
-export const BASE_API_URL = `${window.location.protocol}//api.kitcheninn.com/api`;
+export const BASE_API_URL = `${window.location.protocol}//api.kitcheninns.com/api`;
 // export const BASE_API_URL = `${window.location.protocol}//localhost:8000/api`;
 
 export const LANGUAGES = {

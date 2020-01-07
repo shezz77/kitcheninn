@@ -11,7 +11,7 @@ const ThankyouIndex = () => {
         <div className={'container'}>
             {/*<div className={'container'}>*/}
                 {/*<div className="text-holder" style={{paddingTop: '25px'}}>*/}
-                    {/*<h3>Thank you for ordering from Kitcheninn.</h3>*/}
+                    {/*<h3>Thank you for ordering from Kitcheninns.</h3>*/}
                     {/*<h3>The order details have been sent to your email address.</h3>*/}
                     {/*<h3>For any questions we would like you to contact us on the site. Or customer service. 02-5006076.*/}
                     {/*</h3><h3>With appetite!</h3>*/}

@@ -6,10 +6,10 @@ const About = () => {
                 <div className="container">
                     <div className="row">
                         <div className="col-sm-4">
-                            <h3>About Kitcheninn</h3>
+                            <h3>About Kitcheninns</h3>
                         </div>
                         <div className="col-sm-8">
-                            <p>Kitcheninn was established in 2019 to deliver amazing food directly to your door.
+                            <p>Kitcheninns was established in 2019 to deliver amazing food directly to your door.
                                 We aim to not only bring you a variety of restaurants but we also make the ordering and receiving process easy, smart and always quick.
                                 Because we know, no-one likes waiting for their food.
                                 We are committed to ensuring your food arrives hot everytime and ready to eat.

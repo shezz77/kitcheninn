@@ -1,0 +1,20 @@
+.c-listing-item-img {
+    width: 55px;
+    top: 16px;
+    left: 16px;
+    position: absolute;
+}
+.c-listing-item-info {
+    top: -4px;
+    position: relative;
+    color: #535353;
+    padding-left: 70px;
+}
+.c-listing-item-details {
+    -webkit-flex-basis: 43%;
+    -ms-flex-preferred-size: 43%;
+    flex-basis: 43%;
+    margin-top: auto;
+    padding-left: 16px;
+    border-left: 1px solid #eaeaea;
+}

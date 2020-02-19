@@ -8,6 +8,7 @@ import ThankYou from '../containers/thankYou';
 import ThankYouW from '../containers/thankYou-working';
 import Auth from './../hoc/Auth';
 import Closed from "../containers/closed";
+import DynamicPrivacy from './../containers/dynamic-privacy';
 
 const appRoutes = [
     {
@@ -36,9 +37,9 @@ const appRoutes = [
         component: Auth(OrderCompletion)
     },
     {
-        path: "/privacy",
-        title: "privacy policy",
-        component: Auth(Privacy)
+        path: "/privacy/:appName",
+        title: "Dynamic privacy",
+        component: DynamicPrivacy
     },
     {
         path: "/thankyou",

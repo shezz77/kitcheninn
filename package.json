@@ -6,7 +6,6 @@
     "@material-ui/core": "^3.9.3",
     "@material-ui/icons": "^3.0.2",
     "axios": "^0.18.0",
-    "firebase": "^5.10.0",
     "moment": "^2.24.0",
     "moment-timezone": "^0.5.25",
     "react": "^16.8.4",
@@ -18,6 +17,7 @@
     "react-google-autocomplete": "^1.0.18",
     "react-https-redirect": "^1.1.0",
     "react-modal": "^3.8.1",
+    "react-paypal-button-v2": "^2.6.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.8",
     "react-select": "^2.4.2",
@@ -26,7 +26,7 @@
   },
   "engines": {
     "npm": "6.4.1",
-    "node": "10.10.0"
+    "node": "12.9.0"
   },
   "scripts": {
     "start": "react-scripts start",

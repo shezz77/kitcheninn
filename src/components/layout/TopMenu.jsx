@@ -1,11 +1,11 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import Food2YouWhite from './../../assets/images/Food2You logo.png';
-import AppContext from './../../context/cart-context';
+// import AppContext from './../../context/cart-context';
 // import {LANGUAGES} from "../../utils/globals";
 
 const TopMenu = () => {
-    const context = useContext(AppContext);
-    const {layout} = context;
+    // const context = useContext(AppContext);
+    // const {layout} = context;
 
     const handleRedirect = () => {
         let hostname = window.location.hostname;

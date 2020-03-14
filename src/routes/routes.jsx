@@ -3,7 +3,7 @@ import Restaurant from '../containers/restaurant';
 import Order from '../containers/order';
 import ConfirmOrder from '../containers/confirm-order';
 import OrderCompletion from '../components/pages/order-completion';
-import Privacy from '../containers/privacy';
+// import Privacy from '../containers/privacy';
 import ThankYou from '../containers/thankYou';
 import ThankYouW from '../containers/thankYou-working';
 import Auth from './../hoc/Auth';

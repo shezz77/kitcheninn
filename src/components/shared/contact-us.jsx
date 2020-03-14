@@ -16,10 +16,13 @@ const ContactUs = () => {
                 console.log(res);
                 contactUs.show = false;
                 messages.status = true;
+                messages.type = 'success';
                 messages.text = "Contact form submitted";
 
                 context.handleUpdateMainState({messages, contactUs});
-            })
+            }).catch(error=>{
+                console.log(error)
+        })
 
     };
 

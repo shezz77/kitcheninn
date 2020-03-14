@@ -94,7 +94,7 @@ const DeliveryFrom = ({formType}) => {
                                     onPlaceSelected={handleAddressChange}
                                     placeholder={'Please enter your address'}
                                     types={[]}
-                                    componentRestrictions={{country: "il"}}
+                                    componentRestrictions={{country: "au"}}
                                 />
                             </label>
                         </div>

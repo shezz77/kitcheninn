@@ -3,6 +3,7 @@ import MainContext from "../../../context/cart-context";
 import React from "react";
 import {api} from "../../../utils/request";
 import {calculateDiscount, loaderDisplay} from "../../../utils/methods";
+import { PayPalButton } from "react-paypal-button-v2";
 
 const PaymentForm = ({formType}) => {
     let context = useContext(MainContext);
@@ -109,56 +110,72 @@ const PaymentForm = ({formType}) => {
             </div>
 
             <div className="row">
-                <div className="col-sm-12">
-                    <label className="input">
-                        <i className="icon-prepend fa fa-user"/>
-                        <input
-                            value={orderConfirmInfo.payment.account_holder_name}
-                            onChange={handleFieldChange}
-                            type="text" name="account_holder_name" placeholder="Account Holder Name"/>
-                    </label>
-                </div>
+
+                <PayPalButton
+                    amount={total}
+                    // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
+                    onSuccess={(details, data) => {
+                        alert("Transaction completed by " + details.payer.name.given_name);
+
+                        // OPTIONAL: Call your server to save the transaction
+                        return fetch("/paypal-transaction-complete", {
+                            method: "post",
+                            body: JSON.stringify({
+                                orderID: data.orderID
+                            })
+                        });
+                    }}
+                />
+                {/*<div className="col-sm-12">*/}
+                    {/*<label className="input">*/}
+                        {/*<i className="icon-prepend fa fa-user"/>*/}
+                        {/*<input*/}
+                            {/*value={orderConfirmInfo.payment.account_holder_name}*/}
+                            {/*onChange={handleFieldChange}*/}
+                            {/*type="text" name="account_holder_name" placeholder="Account Holder Name"/>*/}
+                    {/*</label>*/}
+                {/*</div>*/}
             </div>
-            <div className="row">
-                <div className="col-sm-12">
-                    <label className="input">
-                        <i className="icon-prepend fa fa-credit-card"/>
-                        <input
-                            value={orderConfirmInfo.payment.card_number}
-                            onChange={handleFieldChange}
-                            type="text" name="card_number" placeholder="Card Number"/>
-                    </label>
-                </div>
-            </div>
-            <div className="row">
-                <div className="col-sm-4">
-                    <label className="input">
-                        <i className="icon-prepend fa fa-calendar"/>
-                        <input
-                            value={orderConfirmInfo.payment.month}
-                            onChange={handleFieldChange}
-                            type="text" name="month" placeholder="Month"/>
-                    </label>
-                </div>
-                <div className="col-sm-4">
-                    <label className="input">
-                        <i className="icon-prepend fa fa-calendar"/>
-                        <input
-                            value={orderConfirmInfo.payment.year}
-                            onChange={handleFieldChange}
-                            type="text" name="year" placeholder="Year"/>
-                    </label>
-                </div>
-                <div className="col-sm-4">
-                    <label className="input">
-                        <i className="icon-prepend fa fa-cc"/>
-                        <input
-                            value={orderConfirmInfo.payment.cvv}
-                            onChange={handleFieldChange}
-                            type="text" name="cvv" placeholder="CVV"/>
-                    </label>
-                </div>
-            </div>
+            {/*<div className="row">*/}
+                {/*<div className="col-sm-12">*/}
+                    {/*<label className="input">*/}
+                        {/*<i className="icon-prepend fa fa-credit-card"/>*/}
+                        {/*<input*/}
+                            {/*value={orderConfirmInfo.payment.card_number}*/}
+                            {/*onChange={handleFieldChange}*/}
+                            {/*type="text" name="card_number" placeholder="Card Number"/>*/}
+                    {/*</label>*/}
+                {/*</div>*/}
+            {/*</div>*/}
+            {/*<div className="row">*/}
+                {/*<div className="col-sm-4">*/}
+                    {/*<label className="input">*/}
+                        {/*<i className="icon-prepend fa fa-calendar"/>*/}
+                        {/*<input*/}
+                            {/*value={orderConfirmInfo.payment.month}*/}
+                            {/*onChange={handleFieldChange}*/}
+                            {/*type="text" name="month" placeholder="Month"/>*/}
+                    {/*</label>*/}
+                {/*</div>*/}
+                {/*<div className="col-sm-4">*/}
+                    {/*<label className="input">*/}
+                        {/*<i className="icon-prepend fa fa-calendar"/>*/}
+                        {/*<input*/}
+                            {/*value={orderConfirmInfo.payment.year}*/}
+                            {/*onChange={handleFieldChange}*/}
+                            {/*type="text" name="year" placeholder="Year"/>*/}
+                    {/*</label>*/}
+                {/*</div>*/}
+                {/*<div className="col-sm-4">*/}
+                    {/*<label className="input">*/}
+                        {/*<i className="icon-prepend fa fa-cc"/>*/}
+                        {/*<input*/}
+                            {/*value={orderConfirmInfo.payment.cvv}*/}
+                            {/*onChange={handleFieldChange}*/}
+                            {/*type="text" name="cvv" placeholder="CVV"/>*/}
+                    {/*</label>*/}
+                {/*</div>*/}
+            {/*</div>*/}
             {/*<div className="row">*/}
             {/*<div className="col-sm-4">*/}
             {/*<label className="input">*/}

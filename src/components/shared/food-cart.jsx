@@ -16,7 +16,7 @@ const FoodCard = props => {
     const navigateToConfirmOrder = () => {
         if (min_amount > total) {
             messages.status = true;
-            messages.text = 'Minimum limit is ₪ 50 for an order Please add your order!';
+            messages.text = 'Minimum limit is $ 50 for an order Please add your order!';
             context.handleUpdateMainState({messages});
             return false;
         }
@@ -68,7 +68,7 @@ const FoodCard = props => {
                                                     <h3 className="title light">Delivery Charges</h3>
                                                 </div>
                                                 <div className="col-md-6 col-xs-6">
-                                                    <h3 className="nis light">{delivery_charges} ₪</h3>
+                                                    <h3 className="nis light">{delivery_charges} $</h3>
                                                 </div>
                                             </div>
                                         </div>
@@ -85,7 +85,7 @@ const FoodCard = props => {
                                                     <h3 className="title light">Discount</h3>
                                                 </div>
                                                 <div className="col-md-6 col-xs-6">
-                                                    <h3 className="nis light">{calculateDiscount(total, discount) }₪</h3>
+                                                    <h3 className="nis light">{calculateDiscount(total, discount) }$</h3>
                                                 </div>
                                             </div>
                                         </div>
@@ -102,7 +102,7 @@ const FoodCard = props => {
                                                     <h3 className="title light">Grand Total</h3>
                                                 </div>
                                                 <div className="col-md-6 col-xs-6">
-                                                    <h3 className="nis light">{total + parseFloat(delivery_charges) - calculateDiscount(total, discount)} ₪</h3>
+                                                    <h3 className="nis light">{total + parseFloat(delivery_charges) - calculateDiscount(total, discount)} $</h3>
                                                 </div>
                                             </div>
                                         </div>

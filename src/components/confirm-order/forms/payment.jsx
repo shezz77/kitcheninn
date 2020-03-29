@@ -68,7 +68,7 @@ const PaymentForm = ({formType}) => {
 
                         messages.status = true;
                         messages.type = 'success';
-                        messages.text = `Congrats!! You got ${calculateDiscount(total, cart.discount)}₪ discount.`;
+                        messages.text = `Congrats!! You got ${calculateDiscount(total, cart.discount)}$ discount.`;
                         handleUpdateMainState({messages, cart})
                     }
                 })

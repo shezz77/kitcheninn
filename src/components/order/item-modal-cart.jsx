@@ -37,7 +37,7 @@ const ItemModalCart = props => {
         <div className="modal-footer">
             <div className="row no-gutters">
                 <div className="col-xs-2">
-                    <h2 style={{fontSize: '14px'}} className="f black pull-left"> total {calculateItemPrice(item)} ₪</h2>
+                    <h2 style={{fontSize: '14px'}} className="f black pull-left"> total {calculateItemPrice(item)} $</h2>
                 </div>
                 <div className="col-xs-6">
                     <textarea value={item.special_request} onChange={handleSpecialRequest} placeholder={'Special Request'} className={'form-control'}/>

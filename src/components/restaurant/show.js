@@ -16,7 +16,7 @@ const Restaurant = props => {
         if (availableStatus.includes(RESTAURANT_AVAILIBILITY.CLOSED) || availableStatus === RESTAURANT_AVAILIBILITY.COMING_SOON || availableStatus === RESTAURANT_AVAILIBILITY.PERMANENT_CLOSED) {
             return false;
         }
-        
+
         localStorage.removeItem('cart');
         updateCartStateFromLocalStorage();
 
@@ -71,7 +71,7 @@ const Restaurant = props => {
                         <ul className={'newList'}>
                             <li>
                                 <i className={'fa fa-money'}/>
-                                <p><em/>Min. order {restaurant.min_amount}₪</p>
+                                <p><em/>Min. order {restaurant.min_amount}$</p>
                             </li>
                             <li>
                                 <div className={'row'}>

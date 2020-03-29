@@ -64,7 +64,7 @@ const CartItem = props => {
                                href="#sa">
                                 <i className="fa fa-times" aria-hidden="true"/>
                             </a>
-                            <p className="f black amount">{calculateItemPrice(cartItem)} ₪</p>
+                            <p className="f black amount">{calculateItemPrice(cartItem)} $</p>
                         </div>
                     </div>
 

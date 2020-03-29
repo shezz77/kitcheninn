@@ -153,7 +153,7 @@ const ConfirmModal = props => {
                                                             <h3 className="title light">Delivery Charges</h3>
                                                         </div>
                                                         <div className="col-md-6 col-xs-6">
-                                                            <h3 className="nis light">{delivery_charges} ₪</h3>
+                                                            <h3 className="nis light">{delivery_charges} $</h3>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -170,7 +170,7 @@ const ConfirmModal = props => {
                                                             <h3 className="title light">Total Discount</h3>
                                                         </div>
                                                         <div className="col-md-6 col-xs-6">
-                                                            <h3 className="nis light">{calculateDiscount(context.cart.total, discount) }₪</h3>
+                                                            <h3 className="nis light">{calculateDiscount(context.cart.total, discount) }$</h3>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -187,7 +187,7 @@ const ConfirmModal = props => {
                                                             <h3 className="title light">Grand Total</h3>
                                                         </div>
                                                         <div className="col-md-6 col-xs-6">
-                                                            <h3 className="nis light">{parseInt(context.cart.total) + parseInt(delivery_charges) - calculateDiscount(context.cart.total, discount)} ₪</h3>
+                                                            <h3 className="nis light">{parseInt(context.cart.total) + parseInt(delivery_charges) - calculateDiscount(context.cart.total, discount)} $</h3>
                                                         </div>
                                                     </div>
                                                 </div>

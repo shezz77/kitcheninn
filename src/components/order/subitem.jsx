@@ -47,7 +47,7 @@ const SubItem = props => {
                     <input type="checkbox" checked={!!subitem.selected} onChange={handleSubitemSelect} name={subitem.name_en}/>
                     <div className="control__indicator"/>
                 </div>
-                <p>{subitem.name_en}{subitem.price && parseInt(subitem.price) !== 0 ? ` ${subitem.price}₪` : ''}</p>
+                <p>{subitem.name_en}{subitem.price && parseInt(subitem.price) !== 0 ? ` ${subitem.price}$` : ''}</p>
             </label>
             <span className="error" style={{display: 'none'}}>*Required field</span>
         </li>

@@ -8,7 +8,7 @@ const Index = () => {
 
     return (
         <div className={'item-box'}>
-            <h4 className="title"> Hachshar</h4>
+            <h4 className="title"> Week days</h4>
             <div className="list-item">
                 <ul id="tag">
                     {kashruts && (

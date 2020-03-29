@@ -64,7 +64,7 @@ class OrderContainer extends React.Component {
                             <i className="fa fa-arrow-circle-o-left" aria-hidden="true"/>
                         </button>
                         <div className="container">
-                            <a href="#sa"><img alt="" src={AppIcon}/> Get the App</a>
+                            <a href="https://apps.apple.com/us/app/kitcheninns/id1495725627?ls=1"><img alt="" src={AppIcon}/> Get the App</a>
                         </div>
                     </div>
                     <div className="container">
@@ -72,7 +72,7 @@ class OrderContainer extends React.Component {
                        <RestaurantDetailHeader
                            restaurant={this.context.restaurant}
                        />
-                        
+
                         <section className="block">
                             <div className="row no-gutters">
                                 {this.context.restaurant && (
@@ -82,12 +82,12 @@ class OrderContainer extends React.Component {
                                     />
                                 )}
 
-                                
+
                                 <FoodCart/>
                             </div>
                         </section>
-                   
-                   
+
+
                     </div>
                 </div>
 

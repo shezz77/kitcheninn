@@ -23,6 +23,7 @@ class Index extends Component {
         },
         find: {
             city: '',
+            day: '',
             cities: '',
             location: {
                 latitude: '',

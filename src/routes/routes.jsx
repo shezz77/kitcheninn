@@ -22,7 +22,7 @@ const appRoutes = [
         component: Auth(Order)
     },
     {
-        path: "/restaurants/:city",
+        path: "/restaurants/:city/:day",
         title: "Restaurant",
         component: Auth(Restaurant)
     },

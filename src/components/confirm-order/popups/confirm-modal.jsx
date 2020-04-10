@@ -98,6 +98,7 @@ const ConfirmModal = props => {
 
             localStorage.removeItem('restaurant');
             localStorage.removeItem('cart');
+            localStorage.removeItem('orderConfirmInfo');
             navigate(props, '/thankyou');
         }).catch(error => {
             messages.text = "Incorrect card!!! Please check you credit card info.";

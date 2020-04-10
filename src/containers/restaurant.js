@@ -24,14 +24,15 @@ class Restaurant extends Component {
 
     fetchRestaurants = () => {
         const {find} = this.context;
+        const {city, day} = this.props.match.params;
         // const {city} = this.props.match.params;
         // const {search} = this.props.location;
         let url = '';
 
         if (find.searchKey) {
-            url = `/restaurants-by-city/${find.city}?language=en&searchKey=${find.searchKey}`;
+            url = `/restaurants-by-city/${city}/${day}?language=en&searchKey=${find.searchKey}`;
         } else  {
-            url = `/restaurants-by-city/${find.city}?language=en`;
+            url = `/restaurants-by-city/${city}/${day}?language=en`;
         }
 
         api(url, 'get')

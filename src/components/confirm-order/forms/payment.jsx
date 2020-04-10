@@ -14,39 +14,7 @@ const PaymentForm = ({formType}) => {
     const handleFieldChange = (e) => {
         let {value, name} = e.target;
 
-        if (name === 'card_number' && (isNaN(value) || value.length > 16)) {
-            // messages.text = "Invalid card number";
-            // messages.status = true;
-            // handleUpdateMainState({messages});
-            return;
-        }
-
-        if (name === 'month' && (isNaN(value) || value.length > 2)) {
-            // messages.text = "Invalid month";
-            // messages.status = true;
-            // handleUpdateMainState({messages});
-            return;
-        }
-
-        if (name === 'year' && (isNaN(value) || value.length > 2)) {
-            // messages.text = "Invalid year";
-            // messages.status = true;
-            // handleUpdateMainState({messages});
-            return;
-        }
-
-        if (name === 'cvv' && (isNaN(value) || value.length > 3)) {
-            // messages.text = "Invalid cvv";
-            // messages.status = true;
-            // handleUpdateMainState({messages});
-            return;
-        }
-
-        // messages.text = "";
-        // messages.status = false;
-        // handleUpdateMainState({messages});
-
-        orderConfirmInfo[formType][e.target.name] = value;
+        orderConfirmInfo[formType][name] = value;
         handleUpdateMainState({orderConfirmInfo, messages});
     };
 
@@ -110,22 +78,32 @@ const PaymentForm = ({formType}) => {
             </div>
 
             <div className="row">
+                {!orderConfirmInfo.payment.paid ? (
+                    <PayPalButton
+                        amount={total}
+                        // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
+                        onSuccess={(details, data) => {
+                            // debugger;
+                            // alert("Transaction completed by " + details.payer.name.given_name);
 
-                <PayPalButton
-                    amount={total}
-                    // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
-                    onSuccess={(details, data) => {
-                        alert("Transaction completed by " + details.payer.name.given_name);
+                            handleFieldChange({target: {name: 'transactionInfo', value: details}});
+                            handleFieldChange({target: {name: 'paid', value: total}});
 
-                        // OPTIONAL: Call your server to save the transaction
-                        return fetch("/paypal-transaction-complete", {
-                            method: "post",
-                            body: JSON.stringify({
-                                orderID: data.orderID
-                            })
-                        });
-                    }}
-                />
+                            localStorage.setItem('orderConfirmInfo', JSON.stringify(orderConfirmInfo));
+
+                            // OPTIONAL: Call your server to save the transaction
+                            // return fetch("/paypal-transaction-complete", {
+                            //     method: "post",
+                            //     body: JSON.stringify({
+                            //         orderID: data.orderID
+                            //     })
+                            // });
+                        }}
+                    />
+                ) : (
+                    <h1 style={{marginLeft: '40px', marginTop: '100px'}}>Order paid amount ${orderConfirmInfo.payment.paid}</h1>
+                )}
+
                 {/*<div className="col-sm-12">*/}
                     {/*<label className="input">*/}
                         {/*<i className="icon-prepend fa fa-user"/>*/}

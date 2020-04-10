@@ -10,6 +10,16 @@ import {googleConfigs} from "../../utils/configs";
 
 Geocode.setApiKey(googleConfigs.api_key);
 
+const DAYS = [
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday',
+    'Sunday'
+];
+
 const Find = props => {
     localStorage.removeItem('find');
 
@@ -68,15 +78,22 @@ const Find = props => {
     //     navigate(props, `/restaurants/${context.find.city || 'current'}?lat=${location.latitude}&lng=${location.longitude}`)
     // };
 
-    const handleCityChange = e => {
+    const handleChange = e => {
         let { find } = context;
-        find.city = e.target.value;
-
+        const {name, value} = e.target;
+        find[name] = value;
         context.handleUpdateMainState({ find });
     };
 
     const handleFindRestaurantBtn = () => {
-        navigate(props, `/restaurants/${context.find.city}`)
+        const { find } = context;
+
+        if (!find.day || !find.city) {
+            alert('Please select day and city to proceed!');
+            return false;
+        }
+
+        navigate(props, `/restaurants/${context.find.city}/${context.find.day}`)
     };
 
     return (
@@ -88,7 +105,7 @@ const Find = props => {
                             {/*defaultValue={find.location.address}*/}
                             {/*className={'form-control'}*/}
                             {/*style={{width: '100%', height: '67px', border: 'none', padding: '15px'}}*/}
-                            {/*onPlaceSelected={handleCityChange}*/}
+                            {/*onPlaceSelected={handleChange}*/}
                             {/*placeholder={'Please enter your address'}*/}
                             {/*types={[]}*/}
                             {/*componentRestrictions={{country: "il"}}*/}
@@ -105,7 +122,18 @@ const Find = props => {
             <div id="mc-form" className="subscrie-form green ">
                 <label className="mt10" htmlFor="mc-email" />
                 <div className="select">
-                    <select name="city" onChange={handleCityChange} value={context.find.city} id="slct">
+                    <select name="day" onChange={handleChange} value={context.find.day} id="slct">
+                        <option>Select Day</option>
+                        {
+                            DAYS.map((obj, index) => (
+                                <option key={index} value={obj}>{obj}</option>
+                            ))
+                        }
+                    </select>
+                </div>
+                <label className="mt10" htmlFor="mc-email" />
+                <div className="select">
+                    <select name="city" onChange={handleChange} value={context.find.city} id="slct">
                         <option>Select City</option>
                         {context.find.cities && (
                             context.find.cities.map((obj, index) => (

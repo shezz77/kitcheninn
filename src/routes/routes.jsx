@@ -1,4 +1,5 @@
 import Home from '../containers/home';
+import Home2 from '../containers/home2';
 import Restaurant from '../containers/restaurant';
 import Order from '../containers/order';
 import ConfirmOrder from '../containers/confirm-order';
@@ -14,6 +15,11 @@ const appRoutes = [
     {
         path: "/",
         title: "Home",
+        component: Auth(Home2)
+    },
+    {
+        path: "/home2",
+        title: "Home2",
         component: Auth(Home)
     },
     {
@@ -22,7 +28,7 @@ const appRoutes = [
         component: Auth(Order)
     },
     {
-        path: "/restaurants/:city/:day",
+        path: "/restaurants/:day/:lat/:lon",
         title: "Restaurant",
         component: Auth(Restaurant)
     },

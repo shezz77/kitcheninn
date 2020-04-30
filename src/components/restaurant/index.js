@@ -8,15 +8,17 @@ const RestaurantList = () => {
 
     return (
         <ul className="resturant-list">
-           {restaurants && (
-               restaurants.map((obj, index) => (
-                    <Restaurant 
-                        key={index}
-                        restaurant={obj} 
-                        index={index}
-                    />
-               ))
-           )}
+           {(restaurants && restaurants.length) ? (
+               restaurants.reduce((restaurants, obj, index) => {
+                   // if (obj.distance <= 10)
+                       restaurants.push(<Restaurant
+                           key={index}
+                           restaurant={obj}
+                           index={index}
+                       />)
+                   return restaurants;
+               }, [])
+           ): (<h1>No restaurant found for you at this time</h1>)}
         </ul>
     )
 };

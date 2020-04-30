@@ -9,7 +9,7 @@ export const api = async (path,type,body = null) => {
         method: type,
         data: body,
         headers: {
-            // 'Content-Type': 'application/json',
+            'Content-Type': 'application/json',
             'Accept': 'application/json',
             'Authorization' : `Bearer `}
     });

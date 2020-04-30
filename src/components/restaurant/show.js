@@ -5,6 +5,7 @@ import {withRouter} from 'react-router-dom';
 // import {calculateDistance} from "../../utils/methods";
 import {processRestaurantActiveStatus} from "./services/methods";
 import {RESTAURANT_AVAILIBILITY} from "../../utils/globals";
+// import {calculateDistance} from "../../utils/methods";
 
 const Restaurant = props => {
     let {restaurant} = props;
@@ -13,6 +14,11 @@ const Restaurant = props => {
     let availableStatus = processRestaurantActiveStatus(restaurant);
 
     const navigateToOrder = () => {
+        if (restaurant.distance > 10) {
+            alert('Sorry! We are not offering above 10km');
+            return  false;
+        }
+
         if (availableStatus.includes(RESTAURANT_AVAILIBILITY.CLOSED) || availableStatus === RESTAURANT_AVAILIBILITY.COMING_SOON || availableStatus === RESTAURANT_AVAILIBILITY.PERMANENT_CLOSED) {
             return false;
         }
@@ -75,10 +81,11 @@ const Restaurant = props => {
                             </li>
                             <li>
                                 <div className={'row'}>
-                                    {/*<div className={'col-xs-7'}>*/}
-                                        {/*<i className={'fa fa-map-marker'}/>*/}
+                                    <div className={'col-xs-7'}>
+                                        <i className={'fa fa-map-marker'}/>
                                         {/*<p>Distance {(calculateDistance(find.location.latitude, find.location.longitude ,restaurant.lat, restaurant.lng, 'K')).toFixed(1)} km</p>*/}
-                                    {/*</div>*/}
+                                        <p>Distance {restaurant.distance} km</p>
+                                    </div>
                                     <div className={'col-xs-5'}>
                                         <span className={availableStatus === RESTAURANT_AVAILIBILITY.OPEN ? 'info-txt pull-right' : 'info-txt pull-right grey'}>{availableStatus}</span>
                                     </div>

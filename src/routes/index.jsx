@@ -189,8 +189,10 @@ class Index extends Component {
 
     showPosition = (position) =>  {
         let {find} = this.state;
-        find.location.latitude = position.coords.latitude;
-        find.location.longitude = position.coords.longitude;
+        if (!find.location.latitude) {
+            find.location.latitude = position.coords.latitude;
+            find.location.longitude = position.coords.longitude;
+        }
         this.setState({find});
     };
 

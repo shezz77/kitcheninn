@@ -8,12 +8,13 @@ import Layout from "../hoc/Layout";
 import RestaurantList from './../components/restaurant';
 import MainContext from './../context/cart-context';
 import TagIndex from './../components/shared/tags';
-import KashrutIndex from './../components/shared/kashruts';
+// import KashrutIndex from './../components/shared/kashruts';
 import {api} from "../utils/request";
 import {LANGUAGES} from "../utils/globals";
 import {withRouter} from 'react-router-dom';
 // import {sort} from "../utils/methods";
 import Search from "../components/restaurant/search";
+import {calculateDistance} from "../utils/methods";
 
 
 class Restaurant extends Component {
@@ -24,21 +25,36 @@ class Restaurant extends Component {
 
     fetchRestaurants = () => {
         const {find} = this.context;
-        const {city, day} = this.props.match.params;
+        const {day, lat, lon} = this.props.match.params;
         // const {city} = this.props.match.params;
         // const {search} = this.props.location;
         let url = '';
 
+        // if (find.searchKey) {
+        //     url = `/restaurants-by-city/${1}/${day}?language=en&searchKey=${find.searchKey}`;
+        // } else  {
+        //     url = `/restaurants-by-city/${1}/${day}?language=en`;
+        // }
+
         if (find.searchKey) {
-            url = `/restaurants-by-city/${city}/${day}?language=en&searchKey=${find.searchKey}`;
+            url = `/restaurants-by-lat-lng?day=${day}&lat=${lat}&lon=${lon}?language=en&searchKey=${find.searchKey}`;
         } else  {
-            url = `/restaurants-by-city/${city}/${day}?language=en`;
+            url = `/restaurants-by-lat-lng?day=${day}&lat=${lat}&lon=${lon}?language=en`;
         }
+        // debugger;
 
         api(url, 'get')
             .then(res => {
+
+                let restaurants = res.data.restaurants ? res.data.restaurants.map(restaurant => ({...restaurant, distance: (calculateDistance(lat, lon ,restaurant.lat, restaurant.lng, 'K')).toFixed(1)})) : [];
+                // debugger;
+                if (restaurants.length) {
+                    restaurants = restaurants.sort((a, b) => (parseFloat(a.distance) > parseFloat(b.distance)) ? 1 : -1);
+                    // restaurants = restaurants.filter(rest => rest.distance <= 10);
+                }
+
                 this.context.handleUpdateMainState({
-                    restaurants: res.data.restaurants,
+                    restaurants,
                     tags: res.data.tags,
                     kashruts: res.data.kashruts
                 })
@@ -67,7 +83,7 @@ class Restaurant extends Component {
                                         />
                                         <div className="sidebar">
                                             <TagIndex/>
-                                            <KashrutIndex/>
+                                            {/* <KashrutIndex/> */}
                                         </div>
                                     </div>
                                     <div className="col-sm-8">

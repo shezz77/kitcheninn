@@ -6,6 +6,7 @@ import {navigate} from "../components/shared/services";
 import {withRouter} from "react-router-dom";
 // import Geocode from "react-geocode";
 import Layout from "../hoc/Layout";
+import moment from "moment";
 
 const DAYS = [
     'Monday',
@@ -68,6 +69,13 @@ const Home2 = (props) => {
 
     const handleFindRestaurantBtn = () => {
         const { find } = context;
+
+        const today = moment().format('dddd');
+
+        if (today === find.day) {
+            alert('You cannot order today, Please make sure order 1 day before!');
+            return false;
+        }
 
         if (!find.day || !find.city) {
             alert('Please select day and address to proceed!');

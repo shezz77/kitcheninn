@@ -7,6 +7,7 @@ import Geocode from "react-geocode";
 
 import AppContext from './../../context/cart-context';
 import {googleConfigs} from "../../utils/configs";
+import moment from "moment";
 
 Geocode.setApiKey(googleConfigs.api_key);
 

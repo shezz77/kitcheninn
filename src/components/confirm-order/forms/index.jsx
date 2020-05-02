@@ -85,7 +85,7 @@ const Index = () => {
                 return false;
             }
 
-            let street_name = validate('Street Number', orderConfirmInfo.delivery.street_name, FIELD_TYPES.TEXT, true);
+            let street_name = validate('Street Number', orderConfirmInfo.delivery.street_name, FIELD_TYPES.TEXT, false);
 
             if (!street_name.status) {
                 messages.text = street_name.message;
@@ -95,14 +95,14 @@ const Index = () => {
                 return false;
             }
 
-            let matches = orderConfirmInfo.delivery.street_name.match(/\d+/g);
-            if (matches == null) {
-                messages.text = 'Street number is not valid';
-                messages.type = 'error';
-                messages.status = true;
-                handleUpdateMainState({messages});
-                return false;
-            }
+            // let matches = orderConfirmInfo.delivery.street_name.match(/\d+/g);
+            // if (matches == null) {
+            //     messages.text = 'Street number is not valid';
+            //     messages.type = 'error';
+            //     messages.status = true;
+            //     handleUpdateMainState({messages});
+            //     return false;
+            // }
 
             let address_notes = validate('Address Notes', orderConfirmInfo.delivery.address_notes, FIELD_TYPES.TEXT, false);
 
@@ -114,7 +114,7 @@ const Index = () => {
                 return false;
             }
 
-            let building_no = validate('Building No', orderConfirmInfo.delivery.building_no, FIELD_TYPES.TEXT, true);
+            let building_no = validate('Building No', orderConfirmInfo.delivery.building_no, FIELD_TYPES.TEXT, false);
 
             if (!building_no.status) {
                 messages.text = building_no.message;

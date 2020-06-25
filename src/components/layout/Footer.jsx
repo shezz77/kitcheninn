@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import AppContext from './../../context/cart-context';
 
-import Food2YouLogo from './../../assets/images/Food2You logo.png';
+import Food2YouLogo from './../../assets/images/logo-white.png';
 import AppStoreIcon from './../../assets/images/app store icon.png';
 import PlayStoreIcon from './../../assets/images/google play icon.png';
 

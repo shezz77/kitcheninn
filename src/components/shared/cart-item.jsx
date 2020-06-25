@@ -39,16 +39,20 @@ const CartItem = props => {
         context.handleUpdateMainState({cart});
     };
 
+    const isPayment = (payment) => {
+        return !!(payment.transactionInfo && payment.transactionInfo.status === 'COMPLETED');
+    }
+
     return (
         <div className="order-item add">
             <div className="row no-gutters">
                 <div className="col-xs-4">
                     <section className="qty-section">
-                        <button onClick={() => handleQuantity(cartItem.quantity - 1)} type="button" className="btn btn-sm">
+                        <button disabled={isPayment(context.orderConfirmInfo.payment)} onClick={() => handleQuantity(cartItem.quantity - 1)} type="button" className="btn btn-sm">
                             <i className="fa fa-minus"/>
                         </button>
                         <span className="f-11"><b className="ng-binding">{cartItem.quantity}</b></span>
-                        <button onClick={() => handleQuantity(cartItem.quantity + 1)} type="button" className="btn btn-sm">
+                        <button disabled={isPayment(context.orderConfirmInfo.payment)} onClick={() => handleQuantity(cartItem.quantity + 1)} type="button" className="btn btn-sm">
                             <i className="fa fa-plus"/>
                         </button>
                     </section>

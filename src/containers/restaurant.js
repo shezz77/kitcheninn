@@ -2,26 +2,33 @@ import React, {Component} from 'react';
 import './../assets/css/baron.css';
 import './../assets/css/order.css';
 import './../assets/css/resturant.css';
-
 import AppIcon from './../assets/images/AppIcon.png';
 import Layout from "../hoc/Layout";
 import RestaurantList from './../components/restaurant';
 import MainContext from './../context/cart-context';
 import TagIndex from './../components/shared/tags';
-// import KashrutIndex from './../components/shared/kashruts';
 import {api} from "../utils/request";
 import {LANGUAGES} from "../utils/globals";
 import {withRouter} from 'react-router-dom';
-// import {sort} from "../utils/methods";
 import Search from "../components/restaurant/search";
 import {calculateDistance} from "../utils/methods";
+import {navigate} from "../components/shared/services";
 
 
 class Restaurant extends Component {
+    static contextType = MainContext;
 
     componentDidMount = () => {
         this.fetchRestaurants();
     };
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        const {orderConfirmInfo} = this.context;
+        if (orderConfirmInfo.payment.transactionInfo && orderConfirmInfo.payment.transactionInfo.status === 'COMPLETED') {
+
+            navigate(this.props, '/confirm-order');
+        }
+    }
 
     fetchRestaurants = () => {
         const {find} = this.context;

@@ -1,5 +1,6 @@
 import React from 'react';
-import Food2YouWhite from './../../assets/images/Food2You logo.png';
+// import Food2YouWhite from './../../assets/images/Food2You logo.png';
+import kiWhiteLogo from './../../assets/images/logo-transparent.png';
 // import AppContext from './../../context/cart-context';
 // import {LANGUAGES} from "../../utils/globals";
 
@@ -8,12 +9,12 @@ const TopMenu = () => {
     // const {layout} = context;
 
     const handleRedirect = () => {
-        let hostname = window.location.hostname;
-        if (hostname === "en.food2you.com"){
-            window.location.href = 'http://food2you.com';
-        } else {
+        // let hostname = window.location.hostname;
+        // if (hostname === "en.food2you.com"){
+        //     window.location.href = 'http://food2you.com';
+        // } else {
             window.location.href = 'http://kitcheninns.com';
-        }
+        // }
 
     };
 
@@ -27,7 +28,7 @@ const TopMenu = () => {
                         <span className="icon-bar"/>
                     </button>
 
-                    <a className="logo" href="#f2u"><img src={Food2YouWhite} alt=""/></a>
+                    <a className="logo" href="#f2u"><img style={{maxWidth: '66%'}} src={kiWhiteLogo} alt=""/></a>
                 </div>
                 <div className="collapse navbar-collapse" id="mainmenu">
                     <ul className="nav navbar-nav navbar-right">

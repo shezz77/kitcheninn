@@ -9,6 +9,8 @@ import ReactModal from 'react-modal';
 import ItemModal from "../components/order/item-modal";
 import MainContext from './../context/cart-context';
 import {api} from "../utils/request";
+import {navigate} from "../components/shared/services";
+import {withRouter} from "react-router-dom";
 // import {calculateDeliveryCost, calculateDistance} from "../utils/methods";
 // import ChoiceList from "../components/order/choice-list";
 // import {calculateItemPrice} from "../components/order/services/methods";
@@ -19,7 +21,17 @@ class OrderContainer extends React.Component {
     static contextType = MainContext;
 
     componentDidMount() {
+
+
         this.restaurant();
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        const {orderConfirmInfo} = this.context;
+        if (orderConfirmInfo.payment.transactionInfo && orderConfirmInfo.payment.transactionInfo.status === 'COMPLETED') {
+
+            navigate(this.props, '/confirm-order');
+        }
     }
 
     restaurant = () => {
@@ -105,4 +117,4 @@ class OrderContainer extends React.Component {
 }
 
 
-export default OrderContainer;
+export default withRouter(OrderContainer);

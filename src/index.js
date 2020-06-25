@@ -4,6 +4,10 @@ import AppRoute from './routes';
 import { BrowserRouter } from 'react-router-dom';
 import HttpsRedirect from 'react-https-redirect';
 
+import {
+    isMobile
+} from "react-device-detect";
+
 import 'react-app-polyfill/ie9';
 import 'react-app-polyfill/ie11';
 // import 'react-app-polyfill/stable';
@@ -23,6 +27,9 @@ import './assets/css/all.css';
 
 import 'sweetalert/dist/sweetalert.css';
 
+if (isMobile) {
+    window.location.href = 'http://sa.kitcheninns.com';
+} else {
     ReactDOM.render(
         <BrowserRouter>
             <HttpsRedirect>
@@ -31,6 +38,7 @@ import 'sweetalert/dist/sweetalert.css';
         </BrowserRouter>,
         document.getElementById('root')
     );
+}
 
 
 

@@ -57,6 +57,11 @@ const DeliveryFrom = ({formType}) => {
         context.handleUpdateMainState({ find, orderConfirmInfo });
     };
 
+    // what is the difference betwwenn two way association  not able to undarstand.
+    // we'll destroy the association with the help of the parties of a helpful person 
+    // we have a long meeting with client that will decide who will be winner of the project milestone.
+    // we are very gratfull with the armies of the perfect milestore we have.
+
     return (
         <div className="contant-frame">
             <h3 className="light">Delivery</h3>

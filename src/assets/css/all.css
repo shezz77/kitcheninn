@@ -665,7 +665,7 @@ button{
 }
 #loader_bg .yellowDark {
   animation-delay: -250ms;
-  background-color: #008f51;
+  background-color: #82b941;
 }
 #loader_bg .orange {
   animation-delay: -500ms;
@@ -673,7 +673,7 @@ button{
 }
 #loader_bg .orangeDark {
   animation-delay: -750ms;
-  background-color: #008f51;
+  background-color: #82b941;
 }
 
 @keyframes box_layer {
@@ -813,7 +813,7 @@ button{
 }
 .qty-section .btn{
     font-size: 11px;
-    width: 28px;
+    width: 26px;
     height: 24px;
     padding: 5px;
     color: #3e9920;
@@ -893,7 +893,7 @@ button{
 }
 .rectangle-list .active a:before,
 .rectangle-list a:hover:before{
-  background: #008f51;
+  background: #82b941;
   color: #fff;
 }
 
@@ -914,7 +914,7 @@ button{
 .rectangle-list .active a:after,
 .rectangle-list a:hover:after{
   left: -.5em;
-  border-left-color: #008f51;
+  border-left-color: #82b941;
 }
 .hoverable:hover {
   background-color: #e9f4fb;

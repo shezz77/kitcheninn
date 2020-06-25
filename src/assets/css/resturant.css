@@ -6,7 +6,7 @@ body{
 #header{
   height: 84px;
   padding: 17px 0;
-  background-color: #008f51;
+  background-color: #82b941;
 }
 #header .logo{
   width: 138px;
@@ -209,7 +209,7 @@ body{
   margin: -4px 0 0 -4px;
   border-radius: 50%;
   background: #3e9920;
-}{}
+}
 .control input:checked ~ .control__indicator{border-color: #3e9920;}
 /*.control--radio input:disabled ~ .control__indicator:after {*/
   /*background: #7b7b7b;*/
@@ -288,7 +288,7 @@ body{
   height: auto;
   margin: 0 auto;
   border-radius: 7px;
-  background-image: linear-gradient(90deg,#3e9920,#008f51);
+  background-image: linear-gradient(90deg,#3e9920,#82b941);
   position: absolute;
   right: 16px;
   bottom: 7px;
@@ -383,7 +383,7 @@ body{
   font-size: 12px;
   line-height: 15px;
   border-radius: 4px;
-    background-color: #008f51;
+    background-color: #82b941;
     color: #fff;
 }
 .info-txt.grey{

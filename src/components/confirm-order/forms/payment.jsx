@@ -81,6 +81,7 @@ const PaymentForm = ({formType}) => {
                 {!orderConfirmInfo.payment.paid ? (
                     <PayPalButton
                         amount={total}
+
                         // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
                         onSuccess={(details, data) => {
                             // debugger;
@@ -98,6 +99,10 @@ const PaymentForm = ({formType}) => {
                             //         orderID: data.orderID
                             //     })
                             // });
+                        }}
+                        options={{
+                            clientId: "AZZaG6Zz7grGAx9pO_-qWYMAgJ6yZMYLZUm3UOZKKG3NkrKi6SDRqJMzVUiFdFhh3GMHeCiU1DKfdL6-",
+                            currency:"AUD"
                         }}
                     />
                 ) : (

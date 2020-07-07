@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect} from 'react';
 import ReactModal from "react-modal";
 import MainContext from './../../../context/cart-context';
 import {api} from "../../../utils/request";
@@ -13,6 +13,10 @@ const ConfirmModal = props => {
     let {messages, handleUpdateMainState, orderConfirmInfo} = context;
 
     let {items, delivery_charges, discount} = context.cart;
+
+    useEffect(() => {
+        window.Stripe.setPublishableKey('pk_test_51GydScIgShbMnebX8FsV88xOIEpjRy3mm0RSXMs8MP9Woh39IwaFCbIuKOfh33WQ8z0IBAnrU3y0EcSizxevtiVh00bnNZJVHI');
+    }, []);
 
     const handleCloseModal = () => {
         let showConfirmOrderModal = false;
@@ -75,41 +79,72 @@ const ConfirmModal = props => {
         // return true;
 
         let rules = setRulesPayment(orderConfirmInfo.payment);
-        api('/orders', 'post', {
-            ...orderConfirmInfo.customer,
-            ...orderConfirmInfo.delivery,
-            ...orderConfirmInfo.payment,
-            ...rules,
-            items: context.cart.items,
-            total,
-            discount_value,
-            coupon_discount,
-            delivery_or_pickup,
-            platform_info: 'en web',
-            delivery_charges,
-            lat: context.find.location.latitude,
-            lng: context.find.location.longitude,
-            language: 'en',
-            restaurant
-        }).then(res => {
-            // messages.text = "Order completed";
-            // messages.status = true;
-            // handleUpdateMainState({messages});
 
-            localStorage.removeItem('restaurant');
-            localStorage.removeItem('cart');
-            localStorage.removeItem('orderConfirmInfo');
-            navigate(props, '/thankyou');
-        }).catch(error => {
-            messages.text = "Incorrect card!!! Please check you credit card info.";
-            messages.status = true;
-            messages.type = 'error';
-            handleUpdateMainState({messages});
-
-            handleUpdateMainState({messages});
-            loaderDisplay('none');
+        getStripeToken((stripeToken) => {
+            loaderDisplay('block');
+            api('/orders', 'post', {
+                ...orderConfirmInfo.customer,
+                ...orderConfirmInfo.delivery,
+                ...orderConfirmInfo.payment,
+                ...rules,
+                stripeToken,
+                items: context.cart.items,
+                total,
+                discount_value,
+                coupon_discount,
+                delivery_or_pickup,
+                platform_info: 'en web',
+                delivery_charges,
+                lat: context.find.location.latitude,
+                lng: context.find.location.longitude,
+                language: 'en',
+                restaurant
+            }).then(res => {
+                localStorage.removeItem('restaurant');
+                localStorage.removeItem('cart');
+                localStorage.removeItem('orderConfirmInfo');
+                navigate(props, '/thankyou');
+            }).catch(error => {
+                console.log('order error', error.response)
+                messages.text = "Incorrect card!!! Please check you credit card info.";
+                messages.status = true;
+                messages.type = 'error';
+                handleUpdateMainState({messages});
+                handleUpdateMainState({messages});
+            }).finally(() => {
+                loaderDisplay('none');
+            })
         })
+
     };
+
+    const getStripeToken = cb => {
+        let {orderConfirmInfo} = context;
+        let {payment} = orderConfirmInfo;
+        let stripeObject = {
+            number: payment.card_number,
+            cvc: payment.cvv,
+            exp_month: payment.month,
+            exp_year: payment.year
+        }
+        // stripeObject.address_zip = alACart.accounts[0].zip_address;
+        // stripeObject.address_line1 = alACart.accounts[0].address;
+
+        loaderDisplay('block');
+        window.Stripe.card.createToken(stripeObject,  (status, response) => {
+            if (response.error) {
+                console.log(response.error);
+                context.handleUpdateMainState({stripe_error: response.error.code,showMobileAlert :response.error.code });
+                loaderDisplay('none');
+            }
+            else {
+                loaderDisplay('none');
+                cb(response.id);
+            }
+        });
+
+    };
+
 
     return (
         <ReactModal

@@ -56,11 +56,12 @@ const PaymentForm = ({formType}) => {
 
     return (
         <div className="contant-frame">
-            <h3 className="light">Payment Summary</h3>
+            <h3 className="light">Only Cash</h3>
             <div className="row margin-bottom">
 
             </div>
 
+            <div style={{display: 'none'}}>
             <div className="row">
                 <div className="col-sm-8">
                     <label className="input">
@@ -158,19 +159,7 @@ const PaymentForm = ({formType}) => {
                     </label>
                 </div>
             </div>
-            {/*<div className="row">*/}
-            {/*<div className="col-sm-4">*/}
-            {/*<label className="input">*/}
-            {/*<i className="icon-prepend fa fa-codiepie"/>*/}
-            {/*<input*/}
-            {/*value={orderConfirmInfo.payment.coupon}*/}
-            {/*onChange={handleFieldChange}*/}
-            {/*type="text" name="coupon" placeholder="Use coupon"/>*/}
-            {/*</label>*/}
-            {/*</div>*/}
-            {/*</div>*/}
-
-            {/*<iframe src={'https://direct.tranzila.com/food2you/iframenew.php?sum=5&currency=1&cred_type=1&tranmode=AK'}/>*/}
+            </div>
 
         </div>
     );

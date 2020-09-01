@@ -167,6 +167,9 @@ const Index = () => {
         //     return false;
         // }
 
+        // Skip card validation because only cash mode
+        return true;
+
         let card_number = validate('Card No', orderConfirmInfo.payment.card_number, FIELD_TYPES.TEXT, true);
 
         if (!card_number.status) {

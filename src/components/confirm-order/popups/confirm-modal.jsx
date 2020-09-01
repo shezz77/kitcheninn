@@ -78,16 +78,10 @@ const ConfirmModal = props => {
         //
         // return true;
 
-        let rules = setRulesPayment(orderConfirmInfo.payment);
-
-        getStripeToken((stripeToken) => {
-            loaderDisplay('block');
             api('/orders', 'post', {
                 ...orderConfirmInfo.customer,
                 ...orderConfirmInfo.delivery,
                 ...orderConfirmInfo.payment,
-                ...rules,
-                stripeToken,
                 items: context.cart.items,
                 total,
                 discount_value,
@@ -114,7 +108,47 @@ const ConfirmModal = props => {
             }).finally(() => {
                 loaderDisplay('none');
             })
-        })
+
+
+
+        //>>>>>>>>>>>>Disable stripe because cash only mode<<<<<<<<<<<<<<<
+        // let rules = setRulesPayment(orderConfirmInfo.payment);
+        // getStripeToken((stripeToken) => {
+        //     loaderDisplay('block');
+        //     api('/orders', 'post', {
+        //         ...orderConfirmInfo.customer,
+        //         ...orderConfirmInfo.delivery,
+        //         ...orderConfirmInfo.payment,
+        //         ...rules,
+        //         stripeToken,
+        //         items: context.cart.items,
+        //         total,
+        //         discount_value,
+        //         coupon_discount,
+        //         delivery_or_pickup,
+        //         platform_info: 'en web',
+        //         delivery_charges,
+        //         lat: context.find.location.latitude,
+        //         lng: context.find.location.longitude,
+        //         language: 'en',
+        //         restaurant
+        //     }).then(res => {
+        //         localStorage.removeItem('restaurant');
+        //         localStorage.removeItem('cart');
+        //         localStorage.removeItem('orderConfirmInfo');
+        //         navigate(props, '/thankyou');
+        //     }).catch(error => {
+        //         console.log('order error', error.response)
+        //         messages.text = "Incorrect card!!! Please check you credit card info.";
+        //         messages.status = true;
+        //         messages.type = 'error';
+        //         handleUpdateMainState({messages});
+        //         handleUpdateMainState({messages});
+        //     }).finally(() => {
+        //         loaderDisplay('none');
+        //     })
+        // })
+        //>>>>>>>>>>>>Disable stripe because cash only mode<<<<<<<<<<<<<<<
 
     };
 

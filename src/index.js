@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import AppRoute from './routes';
 import { BrowserRouter } from 'react-router-dom';
-import HttpsRedirect from 'react-https-redirect';
+// import HttpsRedirect from 'react-https-redirect';
 
 import {
     isMobile
@@ -32,9 +32,9 @@ if (isMobile) {
 } else {
     ReactDOM.render(
         <BrowserRouter>
-            <HttpsRedirect>
+            {/*<HttpsRedirect>*/}
                 <AppRoute />
-            </HttpsRedirect>
+            {/*</HttpsRedirect>*/}
         </BrowserRouter>,
         document.getElementById('root')
     );

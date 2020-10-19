@@ -27,31 +27,42 @@ const Footer = props => {
         return (
             <footer className="footer-area v4" style={{ backgroundImage: "url('images/footer-bg.png')" }}>
                 <div className="container">
-
                     <div className="row">
-                        <div className="col-xs-12 col-md-6">
-                            <a className="logo" href="#sa"><img src={Food2YouLogo} alt="sa"/></a>
+                        <div className="col-lg-12 col-md-12 col-xs-12">
+                            <div className="">
+                                <a className="logo" href="#sa"><img src={Food2YouLogo} alt="sa"/></a>
+                            </div>
                         </div>
-                    </div>
-                    <hr/>
-                    <div className={'footer-widget-area'}>
-                        <div className={'widget'}>
-                            <ul>
-                                <li>
-                                    <a onClick={showContactUsModal} href={'#sa'}>Contact Us</a>
-                                </li>
-                                <li>
-                                    <a onClick={e => {e.preventDefault(); navigate(props, '/privacy')}} href={'#sa'}>Privacy Policy</a>
-                                </li>
+                        <hr/>
+                        <div className="">
+                            <div className={'footer-widget-area'}>
+                                <div className={'widget'}>
+                                    <ul>
+                                        <li>
+                                            <a onClick={showContactUsModal} href={'#sa'}>Contact Us</a>
+                                        </li>
+                                        <li>
+                                            <a onClick={e => {e.preventDefault(); navigate(props, '/privacy')}} href={'#sa'}>Privacy Policy</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <hr/>
+                        <div className="">
+                            <ul className="app-button">
+                            {/*<li><a href="https://itunes.apple.com/us/app/food2you/id1460190975?ls=1&mt=8" target='_blank' rel="noopener noreferrer"><img alt="" src={AppStoreIcon}/></a></li>*/}
+                            <li><a href="https://apps.apple.com/us/app/kitcheninns/id1495725627?ls=1" rel="noopener noreferrer" target="_blank"><img alt="" src={AppStoreIcon}/></a></li>
+                            <li><a href="https://play.google.com/store/apps/details?id=shezz.kitcheninns.sa&hl=en" target='_blank' rel="noopener noreferrer"><img alt="" src={PlayStoreIcon}/></a></li>
                             </ul>
                         </div>
                     </div>
-                    <hr/>
-                    <ul className="app-button">
-                        {/*<li><a href="https://itunes.apple.com/us/app/food2you/id1460190975?ls=1&mt=8" target='_blank' rel="noopener noreferrer"><img alt="" src={AppStoreIcon}/></a></li>*/}
-                        <li><a href="https://apps.apple.com/us/app/kitcheninns/id1495725627?ls=1" rel="noopener noreferrer" target="_blank"><img alt="" src={AppStoreIcon}/></a></li>
-                        <li><a href="https://play.google.com/store/apps/details?id=shezz.kitcheninns.sa&hl=en" target='_blank' rel="noopener noreferrer"><img alt="" src={PlayStoreIcon}/></a></li>
-                    </ul>
+
+                    
+                    
+                    
+                    
+                    
                 </div>
                 <ContactUs modalShow={'modalIsOpen'} />
             </footer>

@@ -6,7 +6,8 @@ const CategoryList = props => {
     let {categories} = props.restaurant;
 
     return (
-        <div className="col-xs-8">
+        
+        <div className="col-lg-8 col-md-8 col-sm-6 col-xs-12">
             <div id="contant">
                 <ul className="accordion multilevel-accordion">
                     {categories && categories.length > 0 && (

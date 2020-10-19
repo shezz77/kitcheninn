@@ -182,7 +182,7 @@
 }
 .logo{
   width: 178px;
-  height: 73px;
+  height: 178px;
   float: left;
 }
 .hebrew #header .logo,
@@ -444,7 +444,6 @@ button{
   }
   body{
     font-size: 14px;
-    line-height: 18px;
     min-width: 320px;
   }
   .section-padding {
@@ -453,7 +452,7 @@ button{
   }
   .logo {
     width: 150px;
-    height: 65px;
+    height: 150px;
   }
   .mainmenu-area ul.nav > li {
     padding: 0 10px;

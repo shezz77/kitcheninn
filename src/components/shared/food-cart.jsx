@@ -25,7 +25,7 @@ const FoodCard = props => {
     };
 
     return (
-        <div className="col-xs-4">
+        <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
             <div className="cart-holder">
                 {items && items.length > 0 ? (
                     <>

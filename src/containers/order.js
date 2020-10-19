@@ -72,10 +72,13 @@ class OrderContainer extends React.Component {
                 <div className="contant">
 
                     <div className="getapp">
+                        <div>
                         <button className={'back-button'} onClick={() => this.props.history.goBack()}>
                             <i className="fa fa-arrow-circle-o-left" aria-hidden="true"/>
                         </button>
-                        <div className="container">
+                        </div>
+                        
+                        <div className="">
                             <a href="https://apps.apple.com/us/app/kitcheninns/id1495725627?ls=1"><img alt="" src={AppIcon}/> Get the App</a>
                         </div>
                     </div>

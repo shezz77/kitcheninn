@@ -18,8 +18,8 @@ const RestaurantDetailHeader = () => {
                                 </div>
                             </div>
                             <div className="col-md-10 col-sm-10 col-xs-10 verticaly-center">
-                                <div className="row">
-                                    <div className="col-md-12 col-sm-12 col-xs-12">
+                                <div className="">
+                                    <div className="">
                                         <h2>{restaurant ? restaurant.name_en : ''}</h2>
                                         <ul className="list">
                                             <li><a href="#sa">{restaurant.address_en}</a></li><br/>
@@ -35,7 +35,6 @@ const RestaurantDetailHeader = () => {
                                             )}</li>
                                         </ul>
                                     </div>
-
                                 </div>
                             </div>
                         </div>

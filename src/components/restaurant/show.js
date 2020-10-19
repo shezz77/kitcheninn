@@ -80,15 +80,17 @@ const Restaurant = props => {
                                 <p><em/>Min. order {restaurant.min_amount}$</p>
                             </li>
                             <li>
-                                <div className={'row'}>
-                                    <div className={'col-xs-7'}>
+                                <div >
+                                    <div>
                                         <i className={'fa fa-map-marker'}/>
                                         {/*<p>Distance {(calculateDistance(find.location.latitude, find.location.longitude ,restaurant.lat, restaurant.lng, 'K')).toFixed(1)} km</p>*/}
                                         <p>Distance {restaurant.distance} km</p>
                                     </div>
-                                    <div className={'col-xs-5'}>
-                                        <span className={availableStatus === RESTAURANT_AVAILIBILITY.OPEN ? 'info-txt pull-right' : 'info-txt pull-right grey'}>{availableStatus}</span>
-                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div>
+                                    <span className={availableStatus === RESTAURANT_AVAILIBILITY.OPEN ? 'info-txt pull-right' : 'info-txt pull-right grey'}>{availableStatus}</span>
                                 </div>
                             </li>
                         </ul>

@@ -9,6 +9,7 @@
         background-color: #B269D6;
         padding-top: 100px;
     }
+    
 }
 
 
@@ -26,6 +27,7 @@
         background-color: #B269D6;
         padding-top: 100px;
     }
+    
 }
 
 
@@ -64,9 +66,35 @@
         background-color: #B269D6;
         padding-top: 100px;
     }
+    
+    
+
 }
+
 
 
 /* Wide Mobile Layout: 480px. */
 
-@media only screen and (min-width: 480px) and (max-width: 767px) {}
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    .sidebar .list-item {
+        line-height: initial;
+        
+    }
+}
+@media (max-width: 1023px)
+{
+    body {
+        font-size: 14px;
+        line-height: auto;
+        min-width: 320px;
+    }
+    .resturant-list h2{
+        font-size:17px;
+    }
+    .resturant-list .text-holder{
+        padding:20px 10px 0px;
+    }
+    .resturant-list li .newList{
+        padding:0 0 0 10px
+    }
+}

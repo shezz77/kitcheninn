@@ -23,15 +23,15 @@ const ConfirmModal = props => {
         context.handleUpdateMainState({showConfirmOrderModal});
     };
 
-    const setRulesPayment = payment => {
-        return {
-            a: '',
-            b: payment.card_number,
-            c: payment.month,
-            d: payment.year,
-            e: payment.cvv
-        };
-    };
+    // const setRulesPayment = payment => {
+    //     return {
+    //         a: '',
+    //         b: payment.card_number,
+    //         c: payment.month,
+    //         d: payment.year,
+    //         e: payment.cvv
+    //     };
+    // };
 
     const handleSubmit = () => {
         let {restaurant} = context;
@@ -152,33 +152,33 @@ const ConfirmModal = props => {
 
     };
 
-    const getStripeToken = cb => {
-        let {orderConfirmInfo} = context;
-        let {payment} = orderConfirmInfo;
-        let stripeObject = {
-            number: payment.card_number,
-            cvc: payment.cvv,
-            exp_month: payment.month,
-            exp_year: payment.year
-        }
-        // stripeObject.address_zip = alACart.accounts[0].zip_address;
-        // stripeObject.address_line1 = alACart.accounts[0].address;
-
-        loaderDisplay('block');
-        window.Stripe.card.createToken(stripeObject,  (status, response) => {
-            if (response.error) {
-                console.log(response.error);
-                context.handleUpdateMainState({stripe_error: response.error.code,showMobileAlert :response.error.code });
-                loaderDisplay('none');
-            }
-            else {
-                loaderDisplay('none');
-                cb(response.id);
-            }
-        });
-
-    };
-
+    // const getStripeToken = cb => {
+    //     let {orderConfirmInfo} = context;
+    //     let {payment} = orderConfirmInfo;
+    //     let stripeObject = {
+    //         number: payment.card_number,
+    //         cvc: payment.cvv,
+    //         exp_month: payment.month,
+    //         exp_year: payment.year
+    //     }
+    //     // stripeObject.address_zip = alACart.accounts[0].zip_address;
+    //     // stripeObject.address_line1 = alACart.accounts[0].address;
+    //
+    //     loaderDisplay('block');
+    //     window.Stripe.card.createToken(stripeObject,  (status, response) => {
+    //         if (response.error) {
+    //             console.log(response.error);
+    //             context.handleUpdateMainState({stripe_error: response.error.code,showMobileAlert :response.error.code });
+    //             loaderDisplay('none');
+    //         }
+    //         else {
+    //             loaderDisplay('none');
+    //             cb(response.id);
+    //         }
+    //     });
+    //
+    // };
+    //
 
     return (
         <ReactModal

@@ -4,9 +4,6 @@ import AppRoute from './routes';
 import { BrowserRouter } from 'react-router-dom';
 import HttpsRedirect from 'react-https-redirect';
 
-import {
-    isMobile
-} from "react-device-detect";
 
 import 'react-app-polyfill/ie9';
 import 'react-app-polyfill/ie11';
@@ -27,9 +24,9 @@ import './assets/css/all.css';
 
 import 'sweetalert/dist/sweetalert.css';
 
-if (isMobile) {
-    window.location.href = 'http://sa.kitcheninns.com';
-} else {
+// if (isMobile) {
+//     window.location.href = 'http://sa.kitcheninns.com';
+// } else {
     ReactDOM.render(
         <BrowserRouter>
             <HttpsRedirect>
@@ -38,7 +35,7 @@ if (isMobile) {
         </BrowserRouter>,
         document.getElementById('root')
     );
-}
+// }
 
 
 

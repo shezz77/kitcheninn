@@ -13,6 +13,14 @@ const Index = () => {
     const handleSubmit = e => {
         e.preventDefault();
 
+        if (context.cart.total <= 0) {
+            messages.text = 'Cart is empty, select item before order';
+            messages.type = 'error';
+            messages.status = true;
+            handleUpdateMainState({messages});
+            return false;
+        }
+
         const validate = validateForm();
 
         if (!validate){
@@ -170,47 +178,47 @@ const Index = () => {
         // Skip card validation because only cash mode
         return true;
 
-        let card_number = validate('Card No', orderConfirmInfo.payment.card_number, FIELD_TYPES.TEXT, true);
-
-        if (!card_number.status) {
-            messages.text = card_number.message;
-            messages.type = 'error';
-            messages.status = true;
-            handleUpdateMainState({messages});
-            return false;
-        }
-
-        let month = validate('Month', orderConfirmInfo.payment.month, FIELD_TYPES.TEXT, true);
-
-        if (!month.status) {
-            messages.text = month.message;
-            messages.type = 'error';
-            messages.status = true;
-            handleUpdateMainState({messages});
-            return false;
-        }
-
-        let year = validate('Year', orderConfirmInfo.payment.year, FIELD_TYPES.TEXT, true);
-
-        if (!year.status) {
-            messages.text = year.message;
-            messages.type = 'error';
-            messages.status = true;
-            handleUpdateMainState({messages});
-            return false;
-        }
-
-        let cvv = validate('Cvv', orderConfirmInfo.payment.cvv, FIELD_TYPES.TEXT, true);
-
-        if (!cvv.status) {
-            messages.text = cvv.message;
-            messages.type = 'error';
-            messages.status = true;
-            handleUpdateMainState({messages});
-            return false;
-        }
-
-        return true;
+        // let card_number = validate('Card No', orderConfirmInfo.payment.card_number, FIELD_TYPES.TEXT, true);
+        //
+        // if (!card_number.status) {
+        //     messages.text = card_number.message;
+        //     messages.type = 'error';
+        //     messages.status = true;
+        //     handleUpdateMainState({messages});
+        //     return false;
+        // }
+        //
+        // let month = validate('Month', orderConfirmInfo.payment.month, FIELD_TYPES.TEXT, true);
+        //
+        // if (!month.status) {
+        //     messages.text = month.message;
+        //     messages.type = 'error';
+        //     messages.status = true;
+        //     handleUpdateMainState({messages});
+        //     return false;
+        // }
+        //
+        // let year = validate('Year', orderConfirmInfo.payment.year, FIELD_TYPES.TEXT, true);
+        //
+        // if (!year.status) {
+        //     messages.text = year.message;
+        //     messages.type = 'error';
+        //     messages.status = true;
+        //     handleUpdateMainState({messages});
+        //     return false;
+        // }
+        //
+        // let cvv = validate('Cvv', orderConfirmInfo.payment.cvv, FIELD_TYPES.TEXT, true);
+        //
+        // if (!cvv.status) {
+        //     messages.text = cvv.message;
+        //     messages.type = 'error';
+        //     messages.status = true;
+        //     handleUpdateMainState({messages});
+        //     return false;
+        // }
+        //
+        // return true;
     };
 
     return (

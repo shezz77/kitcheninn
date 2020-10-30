@@ -10,7 +10,9 @@ import ContactUs from '../shared/contact-us';
 import {LANGUAGES} from "../../utils/globals";
 import {navigate} from "../shared/services";
 import {withRouter} from 'react-router-dom';
-
+import {
+    isMobile
+} from "react-device-detect";
 
 const Footer = props => {
     const context = useContext(AppContext);
@@ -48,6 +50,7 @@ const Footer = props => {
                                 </div>
                             </div>
                         </div>
+                        {!isMobile && (<>
                         <hr/>
                         <div className="">
                             <ul className="app-button">
@@ -56,13 +59,10 @@ const Footer = props => {
                             <li><a href="https://play.google.com/store/apps/details?id=shezz.kitcheninns.sa&hl=en" target='_blank' rel="noopener noreferrer"><img alt="" src={PlayStoreIcon}/></a></li>
                             </ul>
                         </div>
+                        </>)}
                     </div>
 
-                    
-                    
-                    
-                    
-                    
+
                 </div>
                 <ContactUs modalShow={'modalIsOpen'} />
             </footer>
@@ -77,11 +77,14 @@ const Footer = props => {
                             <a className="logo" href="#sa"><img src={Food2YouLogo} alt="sa"/></a>
                         </div>
                     </div>
-                    <hr />
-                    <ul className="app-button">
-                        <li><a href="#sa"><img alt="" src={AppStoreIcon}/></a></li>
-                        <li><a href="#sa"><img alt="" src={PlayStoreIcon}/></a></li>
-                    </ul>
+                    {/*{!isMobile && (<>*/}
+                    {/*    <hr />*/}
+                    {/*    <ul className="app-button">*/}
+                    {/*        <li><a href="#sa"><img alt="" src={AppStoreIcon}/></a></li>*/}
+                    {/*        <li><a href="#sa"><img alt="" src={PlayStoreIcon}/></a></li>*/}
+                    {/*    </ul>*/}
+                    {/*</>)}*/}
+
                 </div>
             </footer>
         );

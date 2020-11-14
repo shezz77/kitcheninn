@@ -70,70 +70,35 @@ class Restaurant extends Component {
 
 
     render() {
-        const {layout} = this.context;
-
-        if (layout.language === LANGUAGES.ENGLISH) {
-            return (
-                <Layout>
-                    <div>
-                        <div className="contant">
-                            <div className="getapp">
-                                <div className="container">
-                                    <a href="#sa"><img alt="" src={AppIcon}/> Get the App</a>
-                                </div>
-                            </div>
+        return (
+            <Layout>
+                <div>
+                    <div className="contant">
+                        <div className="getapp">
                             <div className="container">
-                                <div className="row">
-                                    <div className="col-sm-4">
-                                        <Search
-                                            fetchRestaurants={this.fetchRestaurants}
-                                        />
-                                        <div className="sidebar">
-                                            <TagIndex/>
-                                            {/* <KashrutIndex/> */}
-                                        </div>
-                                    </div>
-                                    <div className="col-sm-8">
-                                        <RestaurantList/>
-                                    </div>
+                                <a href="#sa"><img alt="" src={AppIcon}/> Get the App</a>
+                            </div>
+                        </div>
+                        <div className="container">
+                            <div className="row">
+                                {/*<div className="col-sm-4">*/}
+                                {/*    <Search*/}
+                                {/*        fetchRestaurants={this.fetchRestaurants}*/}
+                                {/*    />*/}
+                                {/*    <div className="sidebar">*/}
+                                {/*        <TagIndex/>*/}
+                                {/*        /!* <KashrutIndex/> *!/*/}
+                                {/*    </div>*/}
+                                {/*</div>*/}
+                                <div className="col-sm-8">
+                                    <RestaurantList/>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </Layout>
-            );
-        }
-        else{
-            return (
-                <Layout>
-                    <div>
-                        <div className="contant">
-                            <div className="getapp">
-                                <div className="container">
-                                    <a href="#sa"> <img alt="" src={AppIcon}/> הורד את האפליקציה   </a>
-                                </div>
-                            </div>
-                            <div className="container">
-                                <div className="heading-area">
-                                    <h4 className="title">  משלוח מסעדות </h4>
-                                    <p> מסעדות המגיעות לעיר {this.context.restaurants.length} מראה </p>
-                                </div>
-                                <div className="row">
-                                    <div className="col-sm-8">
-                                        <RestaurantList/>
-                                    </div>
-                                    <div className="col-sm-4">
-                                        <div className="sidebar">
-                                            <TagIndex/>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </Layout>
-            );
-        }
+                </div>
+            </Layout>
+        );
     }
 }
 

@@ -16,13 +16,13 @@ export const processHoursOfRestaurant = weekly_availabilities => {
 
 export const processRestaurantActiveStatus = restaurant => {
     let {weekly_availabilities} = restaurant;
-    let status = RESTAURANT_AVAILIBILITY.COMING_SOON;
+    let status = RESTAURANT_AVAILIBILITY.OPEN;
     let format = 'HHmm';
 
-    if(restaurant.restaurant_status.name_en === RESTAURANT_STATUSES.COMING_SOON || restaurant.restaurant_status.name_en === RESTAURANT_STATUSES.CLOSED) {
-        status = restaurant.restaurant_status.name_en;
-        return status;
-    }
+    // if(restaurant.restaurant_status.name_en === RESTAURANT_STATUSES.COMING_SOON || restaurant.restaurant_status.name_en === RESTAURANT_STATUSES.CLOSED) {
+    //     status = restaurant.restaurant_status.name_en;
+    //     return status;
+    // }
 
     let availability = processHoursOfRestaurant(weekly_availabilities);
 

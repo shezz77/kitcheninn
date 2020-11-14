@@ -70,21 +70,32 @@ const Home2 = (props) => {
     const handleFindRestaurantBtn = () => {
         const { find } = context;
 
-        const today = moment().format('dddd');
-
-        if (today === find.day) {
-            alert('You cannot order today, Please make sure order 1 day before!');
-            return false;
-        }
-
         if (!find.day || !find.city) {
             alert('Please select day and address to proceed!');
             return false;
         }
 
+        let validDay = true;
+        let validDayMessage = 'You cannot order today, Please make sure order 2 day before!';
+        let unavailableDays = [
+            moment().format('dddd'),
+            moment().add(1, 'days').format('dddd'),
+        ];
+
+        for (let dayInstance of unavailableDays) {
+            if (dayInstance === find.day) {
+                validDay = false;
+            }
+        }
+
+        if (!validDay) {
+            alert(validDayMessage);
+            return false;
+        }
+
         const {latitude, longitude} = context.find.location;
         localStorage.setItem('find', JSON.stringify(find));
-        navigate(props, `/restaurants/${context.find.day}/${latitude}/${longitude}`)
+        navigate(props, `/restaurants/${context.find.day}/${latitude}/${longitude}`);
     };
 
     return (

@@ -35,13 +35,22 @@ class OrderContainer extends React.Component {
     }
 
     restaurant = () => {
-        let {restaurant_id} = this.props.match.params;
-        api(`/restaurants/${restaurant_id}`, 'get')
+        let {restaurant_id, slug} = this.props.match.params;
+        let url = '';
+
+        if (restaurant_id) {
+            url = `/restaurants/${restaurant_id}`;
+        } else if (slug) {
+            url = `/restaurant/${slug}`;
+        }
+
+        api(url, 'get')
             .then(res => {
                 localStorage.setItem('restaurant', JSON.stringify(res.data));
                 this.context.handleUpdateMainState({restaurant: res.data});
                 // this.getLocation(res);
             })
+
     };
 
     // getLocation = (res) => {
@@ -73,20 +82,20 @@ class OrderContainer extends React.Component {
 
                     <div className="getapp">
                         <div>
-                        <button className={'back-button'} onClick={() => this.props.history.goBack()}>
-                            <i className="fa fa-arrow-circle-o-left" aria-hidden="true"/>
-                        </button>
+                            <button className={'back-button'} onClick={() => this.props.history.goBack()}>
+                                <i className="fa fa-arrow-circle-o-left" aria-hidden="true"/>
+                            </button>
                         </div>
-                        
+
                         <div className="">
                             <a href="https://apps.apple.com/us/app/kitcheninns/id1495725627?ls=1"><img alt="" src={AppIcon}/> Get the App</a>
                         </div>
                     </div>
                     <div className="container">
 
-                       <RestaurantDetailHeader
-                           restaurant={this.context.restaurant}
-                       />
+                        <RestaurantDetailHeader
+                            restaurant={this.context.restaurant}
+                        />
 
                         <section className="block">
                             <div className="row no-gutters">

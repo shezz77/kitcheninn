@@ -80,10 +80,10 @@ const ContactUs = () => {
                         </label>
                     </div>
                 </div>
-                <button type="submit" className="btn-submit button hoverable">
-                    <div className={'anim'}/>
-                    Submit
-                </button>
+                    <button type="submit" className="btn-submit button hoverable">
+                        <div className={'anim'}/>
+                        Submit
+                    </button>
             </form>
         </ReactModal>
     )

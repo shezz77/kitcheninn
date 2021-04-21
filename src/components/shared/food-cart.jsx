@@ -31,8 +31,6 @@ const FoodCard = props => {
                     <>
                         <header className="gray-header">
                             <h2 className="f black light">Food Cart</h2>
-                            <button onClick={navigateToConfirmOrder} className="btn-submit button hoverable" type="button"><div className={'anim'}/> place order</button>
-
                         </header>
 
                         <div className="custom-scroll">
@@ -53,10 +51,8 @@ const FoodCard = props => {
                         </div>
 
                         <div style={{
-                            'position': 'absolute',
                             'left': '15px',
                             'right': '15px',
-                            'bottom': '0',
                             'background': '#fff'
                         }} className="wrap">
                             <div className="row">
@@ -110,7 +106,11 @@ const FoodCard = props => {
                                 </div>
                             </div>
                         </div>
+                        <div className="gray-header">
+                            <button onClick={navigateToConfirmOrder} className="btn-submit button hoverable" type="button"><div className={'anim'}/> place order</button>
+                        </div>
                     </>
+
                 ) :  (
                     <div className="row">
                         <div className="col-xs-12">

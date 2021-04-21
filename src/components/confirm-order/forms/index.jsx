@@ -226,9 +226,7 @@ const Index = () => {
             <CustomerForm formType={'customer'}/>
             <DeliveryFrom formType={'delivery'}/>
             <PaymentForm formType={'payment'}/>
-
             <button type="submit" className="btn-submit button hoverable"><div className={'anim'}/> Submit</button>
-
         </form>
     );
 };

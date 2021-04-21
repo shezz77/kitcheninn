@@ -65,6 +65,9 @@ body {
     font-size: 16px;
     color: #686b75;
 }
+.container{
+    width: 80% !important;
+}
 
 
 /* Remove Chrome Input Field's Unwanted Yellow Background Color */

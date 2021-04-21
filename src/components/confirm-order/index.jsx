@@ -18,10 +18,9 @@ const Index = () => {
                 <div className="container">
                     <section className="block">
                         <div className="row no-gutters">
-                            <div className="col-lg-8 col-md-8 col-sm-6 col-xs-12">
+                            <div className="col-lg-8 col-md-8 col-sm-12 col-xs-12">
                                 <FormIndex/>
                             </div>
-                            <FoodCart/>
                         </div>
                     </section>
                 </div>

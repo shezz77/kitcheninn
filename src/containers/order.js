@@ -11,6 +11,9 @@ import MainContext from './../context/cart-context';
 import {api} from "../utils/request";
 import {navigate} from "../components/shared/services";
 import {withRouter} from "react-router-dom";
+import {
+    isMobile
+  } from "react-device-detect";
 // import {calculateDeliveryCost, calculateDistance} from "../utils/methods";
 // import ChoiceList from "../components/order/choice-list";
 // import {calculateItemPrice} from "../components/order/services/methods";
@@ -87,9 +90,12 @@ class OrderContainer extends React.Component {
                             </button>
                         </div>
 
+                        {!isMobile && (
                         <div className="">
-                            <a href="https://apps.apple.com/us/app/kitcheninns/id1495725627?ls=1"><img alt="" src={AppIcon}/> Get the App</a>
+                        <a href="https://apps.apple.com/us/app/kitcheninns/id1495725627?ls=1"><img alt="" src={AppIcon}/> Get the App</a>
                         </div>
+                        )}
+                      
                     </div>
                     <div className="container">
 

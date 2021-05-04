@@ -28,7 +28,6 @@ export const RESTAURANT_AVAILIBILITY = {
     CLOSED: 'Opens at: ',
     COMING_SOON: 'Coming Soon',
     PERMANENT_CLOSED: 'Closed'
-
 };
 
 export const RESTAURANT_STATUSES = {

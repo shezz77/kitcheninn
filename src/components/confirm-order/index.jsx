@@ -5,15 +5,21 @@ import FoodCart from "../shared/food-cart";
 import Layout from "../../hoc/Layout";
 import FormIndex from "./forms";
 import ConfirmModal from "./popups/confirm-modal";
+import {
+    isMobile
+  } from "react-device-detect";
 
 const Index = () => {
     return (
         <Layout>
             <div className="contant">
                 <div className="getapp">
+                    {!isMobile && (
+
                     <div className="container">
                         <a href="#sa"><img alt="" src={AppIcon}/> Get the App</a>
                     </div>
+                    )}
                 </div>
                 <div className="container">
                     <section className="block">

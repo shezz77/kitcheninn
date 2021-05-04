@@ -1,4 +1,4 @@
-import React, {useContext} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import AppContext from './../../context/cart-context';
 import {navigate} from "../shared/services";
 import {withRouter} from 'react-router-dom';
@@ -6,22 +6,45 @@ import {withRouter} from 'react-router-dom';
 import {processRestaurantActiveStatus} from "./services/methods";
 import {RESTAURANT_AVAILIBILITY} from "../../utils/globals";
 // import {calculateDistance} from "../../utils/methods";
+import moment from 'moment';
 
 const Restaurant = props => {
     let {restaurant} = props;
+    const [availableStatus, setAvailableStatus] = useState(RESTAURANT_AVAILIBILITY.OPEN);
     const context = useContext(AppContext);
     const {updateCartStateFromLocalStorage} = context;
-    let availableStatus = processRestaurantActiveStatus(restaurant);
+
+    useEffect(() => {
+        let unavailableDays = [
+            moment().format('dddd'),
+            moment().add(1, 'days').format('dddd'),
+        ];
+
+        for (let dayInstance of unavailableDays) {
+            if (dayInstance === restaurant.order_on) {
+                setAvailableStatus(RESTAURANT_AVAILIBILITY.PERMANENT_CLOSED)
+            } 
+        }
+
+
+    }, [props.restaurant]);
 
     const navigateToOrder = () => {
-        if (restaurant.distance > 10) {
-            alert('Sorry! We are not offering above 10km');
-            return  false;
-        }
+        let validDayMessage = 'You cannot order today, Please make sure order 2 day before!';
 
-        if (availableStatus.includes(RESTAURANT_AVAILIBILITY.CLOSED) || availableStatus === RESTAURANT_AVAILIBILITY.COMING_SOON || availableStatus === RESTAURANT_AVAILIBILITY.PERMANENT_CLOSED) {
+        if (availableStatus === RESTAURANT_AVAILIBILITY.PERMANENT_CLOSED) {
+            alert(validDayMessage);
             return false;
         }
+
+        // if (restaurant.distance > 10) {
+        //     alert('Sorry! We are not offering above 10km');
+        //     return  false;
+        // }
+
+        // if (availableStatus.includes(RESTAURANT_AVAILIBILITY.CLOSED) || availableStatus === RESTAURANT_AVAILIBILITY.COMING_SOON || availableStatus === RESTAURANT_AVAILIBILITY.PERMANENT_CLOSED) {
+        //     return false;
+        // }
 
         localStorage.removeItem('cart');
         updateCartStateFromLocalStorage();
@@ -84,7 +107,7 @@ const Restaurant = props => {
                                     <div>
                                         <i className={'fa fa-map-marker'}/>
                                         {/*<p>Distance {(calculateDistance(find.location.latitude, find.location.longitude ,restaurant.lat, restaurant.lng, 'K')).toFixed(1)} km</p>*/}
-                                        <p>Distance {restaurant.distance} km</p>
+                                        <p>Delivers on {restaurant.order_on}</p>
                                     </div>
                                 </div>
                             </li>

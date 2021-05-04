@@ -38,6 +38,11 @@ const appRoutes = [
         component: Auth(Restaurant)
     },
     {
+        path: "/restaurants",
+        title: "Restaurant",
+        component: Auth(Restaurant)
+    },
+    {
         path: "/confirm-order",
         title: "ConfirmOrder",
         component: Auth(ConfirmOrder)

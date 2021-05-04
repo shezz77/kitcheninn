@@ -70,32 +70,32 @@ const Home2 = (props) => {
     const handleFindRestaurantBtn = () => {
         const { find } = context;
 
-        if (!find.day || !find.city) {
-            alert('Please select day and address to proceed!');
-            return false;
-        }
+        // if (!find.day || !find.city) {
+        //     alert('Please select day and address to proceed!');
+        //     return false;
+        // }
 
-        let validDay = true;
-        let validDayMessage = 'You cannot order today, Please make sure order 2 day before!';
-        let unavailableDays = [
-            moment().format('dddd'),
-            moment().add(1, 'days').format('dddd'),
-        ];
+        // let validDay = true;
+        // let validDayMessage = 'You cannot order today, Please make sure order 2 day before!';
+        // let unavailableDays = [
+        //     moment().format('dddd'),
+        //     moment().add(1, 'days').format('dddd'),
+        // ];
 
-        for (let dayInstance of unavailableDays) {
-            if (dayInstance === find.day) {
-                validDay = false;
-            }
-        }
+        // for (let dayInstance of unavailableDays) {
+        //     if (dayInstance === find.day) {
+        //         validDay = false;
+        //     }
+        // }
 
-        if (!validDay) {
-            alert(validDayMessage);
-            return false;
-        }
+        // if (!validDay) {
+        //     alert(validDayMessage);
+        //     return false;
+        // }
 
         const {latitude, longitude} = context.find.location;
         localStorage.setItem('find', JSON.stringify(find));
-        navigate(props, `/restaurants/${context.find.day}/${latitude}/${longitude}`);
+        navigate(props, `/restaurants`);
     };
 
     return (
@@ -103,7 +103,7 @@ const Home2 = (props) => {
         <div className="foodapp">
             <form>
                 <div className="inner-form">
-                    <div className="input-field first-wrap">
+                    {/* <div className="input-field first-wrap">
                         <div className="input-select">
                             <select name="day" onChange={handleChange} data-trigger="">
                                 <option value=''>Select Day</option>
@@ -112,7 +112,7 @@ const Home2 = (props) => {
                                 ))}
                             </select>
                         </div>
-                    </div>
+                    </div> */}
                     <div className="input-field second-wrap">
                         <Autocomplete
                             defaultValue={find.location.address}

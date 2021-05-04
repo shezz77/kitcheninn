@@ -13,6 +13,9 @@ import {withRouter} from 'react-router-dom';
 import Search from "../components/restaurant/search";
 import {calculateDistance} from "../utils/methods";
 import {navigate} from "../components/shared/services";
+import {
+    isMobile
+  } from "react-device-detect";
 
 
 class Restaurant extends Component {
@@ -44,9 +47,9 @@ class Restaurant extends Component {
         // }
 
         if (find.searchKey) {
-            url = `/restaurants-by-lat-lng?day=${day}&lat=${lat}&lon=${lon}?language=en&searchKey=${find.searchKey}`;
+            url = `/restaurants?language=en&searchKey=${find.searchKey}`;
         } else  {
-            url = `/restaurants-by-lat-lng?day=${day}&lat=${lat}&lon=${lon}?language=en`;
+            url = `/restaurants?language=en`;
         }
         // debugger;
 
@@ -75,9 +78,12 @@ class Restaurant extends Component {
                 <div>
                     <div className="contant">
                         <div className="getapp">
+                        {!isMobile && (
+
                             <div className="container">
                                 <a href="#sa"><img alt="" src={AppIcon}/> Get the App</a>
                             </div>
+                        )}
                         </div>
                         <div className="container">
                             <div className="row">

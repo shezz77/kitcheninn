@@ -95,7 +95,10 @@ const Home2 = (props) => {
 
         const {latitude, longitude} = context.find.location;
         localStorage.setItem('find', JSON.stringify(find));
-        navigate(props, `/restaurants`);
+        props.history.push({
+            pathname: '/restaurants',
+            state: {lat: latitude, lon: longitude}
+        })
     };
 
     return (

@@ -26,7 +26,7 @@ class Restaurant extends Component {
     };
 
     componentDidUpdate(prevProps, prevState, snapshot) {
-        const {orderConfirmInfo} = this.context;
+        const {orderConfirmInfo, find} = this.context;
         if (orderConfirmInfo.payment.transactionInfo && orderConfirmInfo.payment.transactionInfo.status === 'COMPLETED') {
 
             navigate(this.props, '/confirm-order');
@@ -35,7 +35,7 @@ class Restaurant extends Component {
 
     fetchRestaurants = () => {
         const {find} = this.context;
-        const {day, lat, lon} = this.props.match.params;
+        const {lat, lon} = this.props.location.state;
         // const {city} = this.props.match.params;
         // const {search} = this.props.location;
         let url = '';
@@ -56,7 +56,7 @@ class Restaurant extends Component {
         api(url, 'get')
             .then(res => {
 
-                let restaurants = res.data.restaurants ? res.data.restaurants.map(restaurant => ({...restaurant, distance: (calculateDistance(lat, lon ,restaurant.lat, restaurant.lng, 'K')).toFixed(1)})) : [];
+                let restaurants = res.data.restaurants ? res.data.restaurants.map(restaurant => ({...restaurant, distance: (calculateDistance(lat, lon ,restaurant.lat, restaurant.lon, 'K')).toFixed(1)})) : [];
                 // debugger;
                 if (restaurants.length) {
                     restaurants = restaurants.sort((a, b) => (parseFloat(a.distance) > parseFloat(b.distance)) ? 1 : -1);

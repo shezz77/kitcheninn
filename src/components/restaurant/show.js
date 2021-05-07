@@ -7,12 +7,14 @@ import {processRestaurantActiveStatus} from "./services/methods";
 import {RESTAURANT_AVAILIBILITY} from "../../utils/globals";
 // import {calculateDistance} from "../../utils/methods";
 import moment from 'moment';
+import { calculateDistance } from '../../utils/methods';
 
 const Restaurant = props => {
     let {restaurant} = props;
     const [availableStatus, setAvailableStatus] = useState(RESTAURANT_AVAILIBILITY.OPEN);
     const context = useContext(AppContext);
-    const {updateCartStateFromLocalStorage} = context;
+    const {updateCartStateFromLocalStorage, find} = context;
+    const distance = calculateDistance(find.location.latitude, find.location.longitude ,restaurant.lat, restaurant.lng, 'K');
 
     useEffect(() => {
         let unavailableDays = [
@@ -37,10 +39,11 @@ const Restaurant = props => {
             return false;
         }
 
-        // if (restaurant.distance > 10) {
-        //     alert('Sorry! We are not offering above 10km');
-        //     return  false;
-        // }
+
+        if (distance > 10) {
+            alert('Sorry! We are not offering above 10km');
+            return  false;
+        }
 
         // if (availableStatus.includes(RESTAURANT_AVAILIBILITY.CLOSED) || availableStatus === RESTAURANT_AVAILIBILITY.COMING_SOON || availableStatus === RESTAURANT_AVAILIBILITY.PERMANENT_CLOSED) {
         //     return false;
@@ -106,7 +109,7 @@ const Restaurant = props => {
                                 <div >
                                     <div>
                                         <i className={'fa fa-map-marker'}/>
-                                        {/*<p>Distance {(calculateDistance(find.location.latitude, find.location.longitude ,restaurant.lat, restaurant.lng, 'K')).toFixed(1)} km</p>*/}
+                                        <p>Distance {(distance).toFixed(1)} km</p>
                                         <p>Delivers on {restaurant.order_on}</p>
                                     </div>
                                 </div>

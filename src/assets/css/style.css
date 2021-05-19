@@ -158,3 +158,8 @@ input:-webkit-autofill:focus {
     background-position: left center;
     background-repeat: no-repeat;
 }
+.rest_img{
+    width: 100px !important;
+    height: auto;
+
+}

@@ -70,53 +70,50 @@ const Restaurant = props => {
         <li className={'hoverable'}>
             <div className="text-holder" onClick={navigateToOrder}>
                 <div className="row">
-                    <div className="col-md-2 col-sm-2 col-xs-2 center-content">
+                    <div className="center-content">
                         <div className="logo-container">
                             <img className="rest_img"
                                  src={restaurant.logo} alt="sa"/>
                         </div>
                     </div>
-                    <div className="col-md-5 col-sm-5 col-xs-5">
-                        <div className="row">
-                            <div className="col-md-12 col-sm-12 col-xs-12">
-                                <h2>{restaurant.name_en}</h2>
-                                <p className="detail">{restaurant.address_en}</p>
-                                <p className="detail">{restaurant.tags && (
-                                    restaurant.tags.map((tag) => (
-                                        `${tag.name_en}`
+                    <div className="col-lg-7 col-md-5 col-sm-5 col-xs-5">
+                        <h2>{restaurant.name_en}</h2>
+                        <p className="detail">{restaurant.address_en}</p>
+                        <p className="detail">{restaurant.tags && (
+                            restaurant.tags.map((tag) => (
+                                `${tag.name_en}`
+                            )).toString()
+                        )} </p>
+                        <div className={'row'}>
+                            <div className={'col-xs-12'}>
+                                <p className="detail">{restaurant.kashruts && (
+                                    restaurant.kashruts.map((kashrut) => (
+                                        `${kashrut.name_en}`
                                     )).toString()
                                 )} </p>
-                                <div className={'row'}>
-                                    <div className={'col-xs-12'}>
-                                        <p className="detail">{restaurant.kashruts && (
-                                            restaurant.kashruts.map((kashrut) => (
-                                                `${kashrut.name_en}`
-                                            )).toString()
-                                        )} </p>
-                                        <img className={'newLogo'} src={restaurant.kashruts[0] ? restaurant.kashruts[0].image : null} alt={''}/>
-                                    </div>
-                                </div>
+                                <img className={'newLogo'} src={restaurant.kashruts[0] ? restaurant.kashruts[0].image : null} alt={''}/>
                             </div>
                         </div>
+
+                        <div>
+                            <p><i className={'fa fa-map-marker'}/>  Distance {(distance).toFixed(1)} km</p>
+                        </div>
+
                     </div>
-                    <div className="col-md-5 col-sm-5 col-xs-5" style={{paddingLeft: '0'}}>
+                    <div className="col-lg-5 col-md-5 col-sm-5 col-xs-5" style={{paddingLeft: '0'}}>
                         <ul className={'newList'}>
                             <li>
                                 <i className={'fa fa-money'}/>
                                 <p><em/>Min. order {restaurant.min_amount}$</p>
                             </li>
                             <li>
-                                <div >
-                                    <div>
-                                        <i className={'fa fa-map-marker'}/>
-                                        <p>Distance {(distance).toFixed(1)} km</p>
-                                        <p>Delivers on {restaurant.order_on}</p>
-                                    </div>
+                                <div>
+                                    <p>Delivers on {restaurant.order_on}</p>
                                 </div>
                             </li>
                             <li>
                                 <div>
-                                    <span className={availableStatus === RESTAURANT_AVAILIBILITY.OPEN ? 'info-txt pull-right' : 'info-txt pull-right grey'}>{availableStatus}</span>
+                                    <span className={availableStatus === RESTAURANT_AVAILIBILITY.OPEN ? 'info-txt' : 'info-txt grey'}>{availableStatus}</span>
                                 </div>
                             </li>
                         </ul>

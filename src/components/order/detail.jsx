@@ -12,10 +12,8 @@ const RestaurantDetailHeader = () => {
                 <li>
                     <div className="text-holder">
                         <div className="row row-eq-height">
-                            <div className="col-md-2 col-sm-2 col-xs-2 center-content">
-                                <div className="logo-container">
-                                    <img alt="" className="rest_img" src={restaurant.logo}/>
-                                </div>
+                            <div className="logo-container">
+                                <img alt="" className="rest_img" src={restaurant.logo}/>
                             </div>
                             <div className="col-md-10 col-sm-10 col-xs-10 verticaly-center">
                                 <div className="">

@@ -46,7 +46,7 @@ const CartItem = props => {
     return (
         <div className="order-item add">
             <div className="row no-gutters">
-                <div className="col-xs-4">
+                <div className="col-xs-6">
                     <section className="qty-section">
                         <button disabled={isPayment(context.orderConfirmInfo.payment)} onClick={() => handleQuantity(cartItem.quantity - 1)} type="button" className="btn btn-sm">
                             <i className="fa fa-minus"/>
@@ -57,19 +57,21 @@ const CartItem = props => {
                         </button>
                     </section>
                 </div>
-                <div className="col-xs-8">
+                <div className="col-xs-6">
                     <div className="row no-gutters">
-                        <div className="col-xs-7">
-                            <h5 className="f black short-txt">{cartItem.name_en}</h5>
-                            <p className={'short-txt'}>{subitemNames(cartItem)}</p>
-                        </div>
-                        <div className="col-xs-5">
+
                             <a onClick={handleRemoveCartItem} className="remove new"
                                href="#sa">
                                 <i className="fa fa-times" aria-hidden="true"/>
                             </a>
-                            <p className="f black amount">{calculateItemPrice(cartItem)} $</p>
+                        <a className="f black amount">{calculateItemPrice(cartItem)} $</a>
+                        <div>
+                            <h5 className="f black short-txt">{cartItem.name_en}</h5>
+                            <p className={'short-txt'}>{subitemNames(cartItem)}</p>
                         </div>
+
+
+
                     </div>
 
                 </div>

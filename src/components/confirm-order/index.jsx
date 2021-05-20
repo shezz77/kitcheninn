@@ -21,14 +21,21 @@ const Index = () => {
                     </div>
                     )}
                 </div>
-                <div className="container">
-                    <section className="block">
-                        <div className="row no-gutters">
-                            <div className="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-                                <FormIndex/>
+                <div>
+                    <div className="row">
+                        <div className="col-lg-2">
+
+                        </div>
+                        <div className="col-lg-8">
+                            <div className="container-fluid">
+                                <section className="block">
+                                    <div className="no-gutters">
+                                            <FormIndex/>
+                                    </div>
+                                </section>
                             </div>
                         </div>
-                    </section>
+                    </div>
                 </div>
             </div>
             <ConfirmModal/>

@@ -9,7 +9,6 @@
         background-color: #B269D6;
         padding-top: 100px;
     }
-    
 }
 
 
@@ -26,6 +25,9 @@
     .footer-area.v2 {
         background-color: #B269D6;
         padding-top: 100px;
+    }
+    .cart-holder{
+        height: auto;
     }
     
 }
@@ -66,8 +68,10 @@
         background-color: #B269D6;
         padding-top: 100px;
     }
-    
-    
+    .cart-holder{
+        height:auto;
+    }
+
 
 }
 

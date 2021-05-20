@@ -36,15 +36,15 @@ const ItemModalCart = props => {
     return (
         <div className="modal-footer">
             <div className="row no-gutters">
-                <div className="col-lg-2 col-md-2 col-sm-2 colxs-12">
+                <div className="col-lg-2 col-md-2 col-sm-2 col-xs-12">
                     <h2 style={{fontSize: '14px'}} className="f black pull-left"> total {calculateItemPrice(item)} $</h2>
                 </div>
-                <div className="col-lg-6 col-md-5 col-sm-5 colxs-12">
+                <div className="col-lg-6 col-md-5 col-sm-5 col-xs-12">
                     <textarea value={item.special_request} onChange={handleSpecialRequest} placeholder={'Special Request'} className={'form-control'}/>
                     <span style={{fontSize: '10px', float: 'left'}}>We will try to accommodate special requests but can't held responsible</span>
                 </div>
                 
-                <div className="col-lg-4 col-md-5  col-sm-5 colxs-12">
+                <div className="col-lg-4 col-md-5  col-sm-5 col-xs-12">
 
                     <button onClick={handleAdToCart} className="btn-cart f white button hoverable" type="button"><div className={'anim'}/>add to cart</button>
                 </div>

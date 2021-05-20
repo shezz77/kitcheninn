@@ -97,27 +97,28 @@ class OrderContainer extends React.Component {
                         )}
                       
                     </div>
-                    <div className="container">
+                    <div className="row">
+                        <div className="col-lg-2">
 
-                        <RestaurantDetailHeader
-                            restaurant={this.context.restaurant}
-                        />
-
-                        <section className="block">
-                            <div className="row no-gutters">
-                                {this.context.restaurant && (
-                                    <CategoryList
-                                        restaurant={this.context.restaurant}
-                                        handleUpdateMainState={this.context.handleUpdateMainState}
-                                    />
-                                )}
-
-
-                                <FoodCart/>
+                        </div>
+                        <div className="col-lg-8">
+                            <div className="container-fluid">
+                                <RestaurantDetailHeader
+                                    restaurant={this.context.restaurant}
+                                />
+                                <section className="block">
+                                    <div className="row no-gutters">
+                                        {this.context.restaurant && (
+                                            <CategoryList
+                                                restaurant={this.context.restaurant}
+                                                handleUpdateMainState={this.context.handleUpdateMainState}
+                                            />
+                                        )}
+                                        <FoodCart/>
+                                    </div>
+                                </section>
                             </div>
-                        </section>
-
-
+                        </div>
                     </div>
                 </div>
 

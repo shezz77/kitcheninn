@@ -9,6 +9,10 @@
         background-color: #B269D6;
         padding-top: 100px;
     }
+    .resturant-list li{
+        width:100%;
+        display: block;
+    }
 }
 
 
@@ -28,6 +32,20 @@
     }
     .cart-holder{
         height: auto;
+    }
+    .modal-footer{
+        padding: 0px 20px
+    }
+    .ReactModalPortal .frame{
+        height:30%;
+    }
+    .modal-footer{
+        padding: 0px 20px;
+        height:70%;
+    }
+    .resturant-list li{
+        width:100%;
+        display: block;
     }
     
 }
@@ -70,6 +88,17 @@
     }
     .cart-holder{
         height:auto;
+    }
+    .ReactModalPortal .frame{
+        height:65%;
+    }
+    .modal-footer{
+        padding: 0px 20px;
+        height:35%;
+    }
+    .resturant-list li{
+        width:100%;
+        display: block;
     }
 
 

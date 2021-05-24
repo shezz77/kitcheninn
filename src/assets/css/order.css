@@ -13,11 +13,13 @@ element.style {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    border: solid 2px #d7d7d7;
+    border: solid 1px #d7d7d7;
+    box-shadow: 0px 0px 9px 0px rgb(0 0 0 / 39%);
+    box-shadow: 0px 0px 9px 0px rgb(0 0 0 / 39%);
     margin: 0 0 15px;
 }
 #contant{
-    padding: 32px;
+    padding: 20px;
     margin: 0;
     height: 600px;
     overflow-y: auto;
@@ -28,13 +30,21 @@ element.style {
     padding: 0 0 40px;
 }
 .accordion {
+
+    border:0px !important;
     margin:0;
     list-style:none;
     width: 100%;
-    padding: 0;
+    padding: 0px;
     font-size: 20px;
     line-height: 23px;
     font-weight: 300;
+}
+.accordion__button{
+    padding: 10px;
+}
+.accordion__panel{
+    padding: 10px !important;
 }
 .accordion:after{
     content: '';
@@ -86,13 +96,13 @@ element.style {
     overflow: visible;
 }
 .add-row{
-    padding: 18px 30px;
+    padding: 10px 20px;
     overflow: hidden;
     background: #fff;
     font-size: 16px;
     line-height: 19px;
-    margin: 0 0 20px;
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.29);
+    margin: 5px;
+    box-shadow: 0 2px 7px 0 rgb(0 0 0 / 20%);
 }
 .add-row:hover{
     background: #f4f4f4;
@@ -102,10 +112,10 @@ element.style {
 }
 .add-row.discount .new-dis{display: block;}
 .accordion h4{
-    margin: 0 0 10px;
+    margin: 5px;
 }
 .accordion p{
-    margin: 0;
+    margin: 5px;
     min-width: 276px;
     white-space: nowrap;
     overflow: hidden !important;
@@ -158,7 +168,8 @@ element.style {
     font-weight: 300;
     text-align: center;
     background: #fff;
-    border: solid 2px #d7d7d7;
+    border: solid 1px #d7d7d7;
+    box-shadow: 0px 0px 9px 0px rgb(0 0 0 / 39%);
 }
 .gray-header{
     overflow: hidden;
@@ -205,7 +216,7 @@ element.style {
 .ReactModalPortal .frame{
     overflow: hidden;
     overflow-y: auto;
-    height: 70%;
+    height: 80%;
 }
 .minimum-item{
     padding: 8px 0;
@@ -248,7 +259,7 @@ element.style {
 }
 .pull-right{
     text-align: right;
-    padding-top: 7px;
+    padding-top: 0px;
 }
 
 /* style for popup verticaly center  */
@@ -351,7 +362,7 @@ element.style {
     border: none;
     border-radius: 0 0 10px 10px;
     padding: 11px 10px 11px 30px;
-    height: 30%;
+    height: 20%;
     background: #f2f2f2;
 }
 .button.btn-cart{
@@ -367,7 +378,6 @@ element.style {
     line-height: 23px;
     display: inline-block;
     vertical-align: middle;
-    margin: 12px 24px 0 0;
     text-transform: uppercase;
 }
 .link{

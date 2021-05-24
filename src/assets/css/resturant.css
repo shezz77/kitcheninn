@@ -245,12 +245,23 @@ body{
   border-radius: 5px;
   border: solid 1px #d7d7d7;
 }
+.vendor-image {
+  background: no-repeat 50%;
+  background-size: cover;
+  display: block;
+  height: 292px;
+  width:400px;
+  position: relative;
+  z-index: 1;
+  transition: transform .3s cubic-bezier(.25,.46,.45,.94),opacity .15s cubic-bezier(.25,.46,.45,.94);
+}
 .resturant-list li.hoverable .newList li{
   background: none;
 }
 .resturant-list .text-holder{
   padding: 10px;
-  border-bottom: none;
+  box-shadow: 0 2px 7px 0 rgb(0 0 0 / 20%);
+  
   cursor: pointer;
 }
 .resturant-list .text-holder .row{display: flex;}
@@ -353,7 +364,7 @@ body{
   flex-direction:column;
 }
 .resturant-list.order .text-holder{
-  border: none;
+  box-shadow: 0 2px 7px 0 rgb(0 0 0 / 20%);
 }
 
 .resturant-list li .newList li{
@@ -375,12 +386,12 @@ body{
   margin: 0 5px 0 0;
 }
 .resturant-list li .newList li p{
-  margin: 3px 0 0;
+  margin: 5px 0 0;
   font-size: 13px;
   line-height: 16px;
 }
 .info-txt{
-  padding: 3px 3px;
+  padding: 10px;
   font-size: 12px;
   line-height: 15px;
   border-radius: 4px;

@@ -8,10 +8,9 @@ const ThankyouIndex = () => {
     // let {items} = cart;
 
     return (
-        <div className={'container'}>
             <div className={'container'}>
                 <div className="text-holder" style={{paddingTop: '25px'}}>
-                    <h3>
+                    <h4>
                         THANK YOU <br/>
                         For you Kitcheninns Order!<br/><br/>
 
@@ -22,11 +21,9 @@ const ThankyouIndex = () => {
                         If you have any questions or thoughts please hit us up through our live chat and one of our experts will be happy to chat with you. +61 450 889 573<br/><br/>
 
                         Bon Appe'tit!!<br/><br/>
-                    </h3>
+                    </h4>
                 </div>
             </div>
-
-        </div>
     );
 };
 

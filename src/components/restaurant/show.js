@@ -72,11 +72,11 @@ const Restaurant = props => {
                 <div className="row">
                     <div className="center-content">
                         <div className="logo-container">
-                            <img className="rest_img"
+                            <img className="rest_img vendor-image"
                                  src={restaurant.logo} alt="sa"/>
                         </div>
                     </div>
-                    <div className="col-lg-7 col-md-5 col-sm-5 col-xs-5">
+                    <div className="col-lg-7 col-md-5 col-sm-6 col-xs-6"style={{paddingRight:'0'}}>
                         <h2>{restaurant.name_en}</h2>
                         <p className="detail">{restaurant.address_en}</p>
                         <p className="detail">{restaurant.tags && (
@@ -100,14 +100,14 @@ const Restaurant = props => {
                         </div>
 
                     </div>
-                    <div className="col-lg-5 col-md-5 col-sm-5 col-xs-5" style={{paddingLeft: '0'}}>
+                    <div className="col-lg-5 col-md-5 col-sm-6 col-xs-6" style={{paddingLeft: '0'}}>
                         <ul className={'newList'}>
                             <li>
                                 <i className={'fa fa-money'}/>
                                 <p><em/>Min. order {restaurant.min_amount}$</p>
                             </li>
                             <li>
-                                <div>
+                                <div style={{marginTop: '10px',marginBottom:'10px'}}>
                                     <p>Delivers on {restaurant.order_on}</p>
                                 </div>
                             </li>

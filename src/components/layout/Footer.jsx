@@ -56,7 +56,7 @@ const Footer = props => {
                             <ul className="app-button">
                             {/*<li><a href="https://itunes.apple.com/us/app/food2you/id1460190975?ls=1&mt=8" target='_blank' rel="noopener noreferrer"><img alt="" src={AppStoreIcon}/></a></li>*/}
                             <li><a href="https://apps.apple.com/us/app/kitcheninns/id1495725627?ls=1" rel="noopener noreferrer" target="_blank"><img alt="" src={AppStoreIcon}/></a></li>
-                            <li><a href="https://play.google.com/store/apps/details?id=shezz.kitcheninns.sa&hl=en" target='_blank' rel="noopener noreferrer"><img alt="" src={PlayStoreIcon}/></a></li>
+                            {/* <li><a href="https://play.google.com/store/apps/details?id=shezz.kitcheninns.sa&hl=en" target='_blank' rel="noopener noreferrer"><img alt="" src={PlayStoreIcon}/></a></li> */}
                             </ul>
                         </div>
                         </>)}

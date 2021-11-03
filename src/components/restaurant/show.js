@@ -25,7 +25,7 @@ const Restaurant = props => {
         for (let dayInstance of unavailableDays) {
             if (dayInstance === restaurant.order_on) {
                 setAvailableStatus(RESTAURANT_AVAILIBILITY.PERMANENT_CLOSED)
-            } 
+            }
         }
 
 
@@ -40,7 +40,7 @@ const Restaurant = props => {
         }
 
 
-        if (distance > 10) {
+        if (distance > 30) {
             alert('Sorry! We are not offering above 10km');
             return  false;
         }

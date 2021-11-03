@@ -10,27 +10,118 @@ class Privacy extends React.Component {
             <Layout homeHeader={false}>
                 <div className='privacy-txt'>
                     <div className={'container'}>
-                        <h1>תנאי שימוש באתר <a href="#sa">www.kitcheninns.com</a></h1>
-                        <p>ברוכים הבאים לאתר משלוחים  www.Kitcheninns.com האתר"). האתר מנוהל ומופעל על ידי חברת קומסטיבל מזון בע"מ ("החברה"), השימוש באתר ובתכנים המוצגים בו באמצעות מכשירי קצה שונים כפוף לתנאי השימוש באתר ובתכנים המוצגים בו ("תנאי השימוש"). </p>
-                        <p><strong>אנא קרא/י את תנאי השימוש בעיון ובקפידה, שכן תחילת השימוש באתר ובתכניו מעידה על הסכמתך ואישורך לאמור בתנאי שימוש אלו, שכן החברה שומרת לעצמה את הזכות לעדכן את תנאי השימוש מעת לעת, לפי שיקול דעתה הבלעדי וללא צורך בהודעה מראש. תוקפו של שינוי תנאי השימוש יחל מרגע פרסומו באתר. </strong></p>
-                        <p> אם הינך מתחת לגיל 18, אנא קרא/י תנאים אלה בעיון ובקפידה יחד עם הוריך (או אפוטרופוס אחר). אם אתה (או הוריך) אינכם מסכימים לתנאי השימוש של האתר, כולם או חלקם, אינך רשאי לעשות שימוש באתר זה לכל מטרה שהיא. </p>
-                        <p> באתר תוכלו למצוא מגוון של תכנים ומידע לרבות, תכנים מילוליים, חזותיים, קוליים, אור-קוליים ( audio-visual, ) וכן עיצוב מידע, עיבודו, עריכתו, הפצתו ודרך הצגתו, לרבות (אך לא רק): הודעות, תגובות, כתבות, סקירות, ידיעות, קבצים, ניתוחים, תכנים, הערכות, קישורים, בטקסט, בתמונות ו/או בקול, וכל מידע אחר שיועמד לרשות המשתמשים באתר בכל אמצעי שהוא, הקיים כיום או שיהיה קיים בעתיד, לרבות באמצעות מכשירי הקצה השונים, בנוגע לבתי עסק ונותני שירותים שונים ("התכנים"). בכפוף לתנאי השימוש, תוכלו לבצע חיפוש ולהזמין מוצרים ממגוון ספקים, אתרים ובתי עסק במגוון תחומים ("בתי העסק"), לרבות, מוצרים ממסעדות, ומשלוחי מזון, אתרי מכירות ועסקים משלל תחומים המבצעים משלוחים ומתעדכנים מעת לעת. כמו כן, תוכלו לצפות בתפריטי המסעדות והגלריות של בתי העסק (ככל שיהיו), לגלוש באתרי בתי העסק המתארחים באתר ("האתרים המקושרים"), לפרסם ביקורות, המלצות וחוות דעת המתפרסמות לצד בתי העסק כפי שמופיעים באתר, ולהשתמש במגוון שירותי האתר השונים ("השירותים"). </p>
-                        <p> באתר מתפרסמים הן תכנים שמקורם בחברה והן תכנים שמקורם בצדדים שלישיים לרבות במשתמשי האתר. החברה רשאית לסרב לפרסם תכנים, אשר לדעתה מפרים את תנאי השימוש באתר ו/או העלולים לפגוע בגולשים האחרים באתר ו/או באתר ו/או בחברה ו/או בצד שלישי כלשהו, וכן רשאית החברה למחוק תכנים מעין אלו בכל עת. כמו כן קיימת אפשרות לביצוע חיפושים, חיתוכים ומיונים של תכנים בהתאם לקטגוריות מוגדרות מראש ומילות מפתח מדויקות ("הסיווגים"). החברה לא תהא אחראית לטעויות, השמטת פרטים ו/או לאי-דיוקים העלולים להתרחש כתוצאה משימוש בסיווגים האמורים. </p>
-                        <p> לא יהיה בפעולותיה של החברה כדי להטיל עליה אחריות כלשהי, מכל מין וסוג שהוא, ו/או ליצור התחייבות כלפי כל אדם ו/או אחר בקשר לתכנים שיופיעו ו/או שיוסרו מהאתר ו/או בקשר לפעולות שתנקוט החברה, בין היתר, כדי למנוע פעולות שעשויות לפגוע בזכויות של הגולשים באתר ובזכויותיה. האחריות הבלעדית לתכנים אלו ולכל תוצאה הנובעת מהם חלה על הגולשים באתר ו/או על הצד השלישי שהעלה תכנים מעין אלו לאתר. </p>
-                        <p> האתר נועד לשימוש פרטי בלבד וכל שימוש מסחרי בו ללא קבלת הסכמתה מראש ובכתב של החברה הינו אסור. </p>
-                        <p>תנאי השימוש מיועדים לנשים וגברים כאחד למרות היותם מנוסחים בלשון זכר. </p>
-                        <p>הרשמה לאתר והרשמה למועדון הלקוחות </p>
-                        <p>כדי להשתמש בשירותים מסוימים באתר, לרבות ביצוע משלוח באמצעות האתר ו/או לצורך הרשמה לאתר ו/או לצורך הרשמה למועדון הלקוחות (כהגדרתו להלן) ו/או לצורך ביצוע משלוח והזמנה ללא רישום לאתר, ייתכן כי תתבקש לספק לחברה מספר פרטים אודותיך, ובין היתר את שמך המלא, כתובת דואר אלקטרוני, כתובת מגוריך ומספר טלפון, חלק מהנתונים שתתבקש למסור הינם פרטי חובה – כלומר לא ניתן להירשם ו/או לבצע משלוח והזמנה מבלי למסור פרטים אלו. </p>
-                        <p>רישום לאתר יתבצע על גבי "טופס רישום לאתר". בנוסף לפרטים המצוינים בסעיף ‏2.1 לעיל, הינך מתבקש לבחור סיסמה, אשר תשמש בזיהויך לצורך קבלת השירותים. הינך אחראי באופן מלא לשמירת סודיות הסיסמה ומתחייב להודיע לחברה באופן מיידי על כל שימוש שאינו מורשה בסיסמה שלך ו/או על כל הפרת סודיות אחרת. גולש אשר מילא את טופס הרישום יקרא להלן: "גולש רשום באתר" .</p>
-                        <p>בכדי להירשם למועדון הלקוחות וליהנות מפרסומים ומבצעים אשר יישלחו לתיבת הדואר האלקטרוני, תתבקש לספק לחברה מספר פרטים אודותיך, ובין היתר את שמך המלא, כתובת דואר אלקטרוני, כתובת מגוריך ומספר טלפון, חלק מהנתונים שתתבקש למסור הינם פרטי חובה – כלומר לא ניתן להירשם למועדון הלקוחות מבלי למסור פרטים אלו – פרטי החובה יסומנו באופן מפורש. רישום למועדון הלקוחות יתבצע על גבי "טופס הרשמה למועדון החברים". גולש אשר מילא את טופס ההרשמה למועדון החברים יקרא להלן: "חבר מועדון הלקוחות" .</p>
-                        <p>גולש אשר נרשם לשירותים מסוימים באתר, לרבות ביצוע הזמנת משלוח, ו/או גולש רשום באתר ו/או חבר מועדון הלקוחות כמפורט בסעיפים ‏2.1 - ‏2.3 לעיל ייקרא להלן גם: "גולש רשום". טופס רישום לאתר ו/או טופס הרשמה למועדון החברים ו/או כל טופס רישום אחר לשירותים מסוימים באתר ייקרא להלן גם: טופס רישום" </p>
-                        <p>הינך מתחייב לספק מידע אמיתי, מדויק, נכון ומלא אודותיך, כפי שמתבקש בטופס הרישום כמו כן, הינך מתחייב לעדכן את המידע כפי שנמסר בטופס הרישום במטרה לשמור על נכונותו ודיוקו. </p>
-                        <p>החברה תהא רשאית לנהוג במאגרי המידע של הגולשים הרשומים בהתאם להוראות הדין ולעשות במאגרי המידע של הגולשים הרשומים שימוש, בין היתר, לצורך דיוור מידע ותכנים אל הגולשים הרשומים (בדואר ו/או בדואר אלקטרוני ו/או בפקסימיליה ו/או בהודעות טקסט לטלפון הנייד), לרבות דברי פרסומת של בתי העסק השונים ו/או מפרסמים שונים. </p>
-                        <p>לחברה לא תהא כל אחריות לשימוש בלתי מורשה של כל צד ג' באמצעות הנתונים המופיעים בטופס הרישום. במידה שתבחר לחלוק מידע זה עם צד ג' כלשהו, תישא באחריות לכל הפעולות שיתבצעו באמצעות הנתונים שלך. </p>
-                        <p>במקרה שתאבד שליטה על אחד או יותר מהנתונים המופיעים בטופס הרישום, תאבד שליטה מהותית על המידע האישי שלך, ותהא כפוף לפעולות מחייבות מבחינה חוקית שיתבצעו בשמך. לפיכך, אם הנתונים אינם בטוחים מכל סיבה שהיא, עלייך מוטלת החובה לשנותם לאלתר. </p>
-                        <p>החברה שומרת לעצמה את הזכות להשעות, לבטל או לסרב לספק את השירות הניתן לך על ידה באתר, בכל מקרה של מתן מידע שאינו אמיתי, מעודכן, שלם או נכון בזמן הרישום או לאחריו, או אם יש לחברה את היסוד הסביר להניח כי כך קרה, עם או בלי הודעה מוקדמת. </p>
-                        <p>"ביטול עסקה בהתאם לתקנות הגנת הצרכן (ביטול עסקה) התשע"א -2010 וחוק הגנת הצרכן , התשמ"א - 1981"</p>
-                        <p>הרטום 7 ירושלים</p>
+                    <div style={{backgroundColor: 'white', fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif', padding:'1em', lineHeight: 'normal', color: '#151515'}}>
+            <h2>Privacy Policy</h2> <p>
+            Shehzad Aslam built the {appName} app as
+            an Ad Supported app. This SERVICE is provided by
+            Shehzad Aslam at no cost and is intended for
+            use as is.
+        </p> <p>
+            This page is used to inform visitors regarding
+            my policies with the collection, use, and
+            disclosure of Personal Information if anyone decided to use
+            my Service.
+        </p> <p>
+            If you choose to use my Service, then you agree
+            to the collection and use of information in relation to this
+            policy. The Personal Information that I collect is
+            used for providing and improving the Service.
+            I will not use or share your
+            information with anyone except as described in this Privacy
+            Policy.
+        </p> <p>
+            The terms used in this Privacy Policy have the same meanings
+            as in our Terms and Conditions, which is accessible at
+            {appName} unless otherwise defined in this Privacy
+            Policy.
+        </p> <p><strong>Information Collection and Use</strong></p> <p>
+            For a better experience, while using our Service,
+            I may require you to provide us with certain
+            personally identifiable information. The
+            information that I request will be
+            retained on your device and is not collected by me in any way.
+        </p> <p>
+            The app does use third party services that may collect
+            information used to identify you.
+        </p> <div><p>
+            Link to privacy policy of third party service providers
+            used by the app
+        </p> <ul><li>
+            <a href="https://www.google.com/policies/privacy/" rel="noopener noreferrer" target="_blank">Google Play Services</a>
+        </li><li><a href="https://support.google.com/admob/answer/6128543?hl=en" rel="noopener noreferrer" target="_blank">AdMob</a></li>
+        </ul></div> <p><strong>Log Data</strong></p> <p>
+            I want to inform you that whenever
+            you use my Service, in a case of an error in the
+            app I collect data and information (through third
+            party products) on your phone called Log Data. This Log Data
+            may include information such as your device Internet
+            Protocol (“IP”) address, device name, operating system
+            version, the configuration of the app when utilizing
+            my Service, the time and date of your use of the
+            Service, and other statistics.
+        </p> <p><strong>Cookies</strong></p> <p>
+            Cookies are files with a small amount of data that are
+            commonly used as anonymous unique identifiers. These are
+            sent to your browser from the websites that you visit and
+            are stored on your device's internal memory.
+        </p> <p>
+            This Service does not use these “cookies” explicitly.
+            However, the app may use third party code and libraries that
+            use “cookies” to collect information and improve their
+            services. You have the option to either accept or refuse
+            these cookies and know when a cookie is being sent to your
+            device. If you choose to refuse our cookies, you may not be
+            able to use some portions of this Service.
+        </p> <p><strong>Service Providers</strong></p> <p>
+            I may employ third-party companies
+            and individuals due to the following reasons:
+        </p> <ul><li>To facilitate our Service;</li> <li>To provide the Service on our behalf;</li> <li>To perform Service-related services; or</li> <li>To assist us in analyzing how our Service is used.</li></ul> <p>
+            I want to inform users of this
+            Service that these third parties have access to your
+            Personal Information. The reason is to perform the tasks
+            assigned to them on our behalf. However, they are obligated
+            not to disclose or use the information for any other
+            purpose.
+        </p> <p><strong>Security</strong></p> <p>
+            I value your trust in providing us
+            your Personal Information, thus we are striving to use
+            commercially acceptable means of protecting it. But remember
+            that no method of transmission over the internet, or method
+            of electronic storage is 100% secure and reliable, and
+            I cannot guarantee its absolute security.
+        </p> <p><strong>Links to Other Sites</strong></p> <p>
+            This Service may contain links to other sites. If you click
+            on a third-party link, you will be directed to that site.
+            Note that these external sites are not operated by
+            me. Therefore, I strongly advise you to
+            review the Privacy Policy of these websites.
+            I have no control over and assume no
+            responsibility for the content, privacy policies, or
+            practices of any third-party sites or services.
+        </p> <p><strong>Children’s Privacy</strong></p> <p>
+            These Services do not address anyone under the age of 13.
+            I do not knowingly collect personally
+            identifiable information from children under 13. In the case
+            I discover that a child under 13 has provided
+            me with personal information,
+            I immediately delete this from our servers. If you
+            are a parent or guardian and you are aware that your child
+            has provided us with personal information, please contact
+            me so that I will be able to do
+            necessary actions.
+        </p> <p><strong>Changes to This Privacy Policy</strong></p> <p>
+            I may update our Privacy Policy from
+            time to time. Thus, you are advised to review this page
+            periodically for any changes. I will
+            notify you of any changes by posting the new Privacy Policy
+            on this page. These changes are effective immediately after
+            they are posted on this page.
+        </p> <p><strong>Contact Us</strong></p> <p>
+            If you have any questions or suggestions about
+            my Privacy Policy, do not hesitate to contact
+            me at shehzada.pk786@gmail.com.
+        </p>
+        </div>
                     </div>
                 </div>
             </Layout>

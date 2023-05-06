@@ -10,7 +10,8 @@ const RestaurantList = () => {
         <ul className="resturant-list">
            {(restaurants && restaurants.length) ? (
                restaurants.reduce((restaurants, obj, index) => {
-                   // if (obj.distance <= 10)
+                //    if (obj.distance <= 10)
+                // console.log("Restaturant Dis: "+obj.distance);
                        restaurants.push(<Restaurant
                            key={index}
                            restaurant={obj}

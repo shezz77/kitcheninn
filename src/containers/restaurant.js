@@ -80,8 +80,8 @@ class Restaurant extends Component {
                         <div className="getapp">
                         {!isMobile && (
 
-                            <div className="container">
-                                <a href="#sa"><img alt="" src={AppIcon}/> Get the App</a>
+                            <div className="container  ">
+                                <a className='show_app' href="#sa"><img alt="" src={AppIcon}/> Get the App</a>
                             </div>
                         )}
                         </div>

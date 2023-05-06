@@ -7,6 +7,7 @@ body{
   padding: 17px 0;
   background-color: #82b941;
 }
+
 #header .logo{
   width: 138px;
   height: 58px;
@@ -411,4 +412,12 @@ body{
 .newLogo{
     margin: 0;
   width: 70px;
+}
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+  .show_app{
+    display: none;
+  }
 }

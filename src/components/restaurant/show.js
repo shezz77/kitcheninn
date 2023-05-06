@@ -30,20 +30,21 @@ const Restaurant = props => {
 
 
     }, [props.restaurant]);
+    if (distance > 30) {
+        return  false;
+    }
+    if (availableStatus === RESTAURANT_AVAILIBILITY.PERMANENT_CLOSED) {
 
+        // alert(validDayMessage);
+        return false;
+    }
     const navigateToOrder = () => {
         let validDayMessage = 'You cannot order today, Please make sure order 2 day before!';
 
-        if (availableStatus === RESTAURANT_AVAILIBILITY.PERMANENT_CLOSED) {
-            alert(validDayMessage);
-            return false;
-        }
+        
 
 
-        if (distance > 30) {
-            alert('Sorry! We are not offering above 10km');
-            return  false;
-        }
+        
 
         // if (availableStatus.includes(RESTAURANT_AVAILIBILITY.CLOSED) || availableStatus === RESTAURANT_AVAILIBILITY.COMING_SOON || availableStatus === RESTAURANT_AVAILIBILITY.PERMANENT_CLOSED) {
         //     return false;
